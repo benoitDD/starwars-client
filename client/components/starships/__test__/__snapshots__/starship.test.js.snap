@@ -1,0 +1,497 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Starship 1`] = `
+<section>
+  <h1>
+    X-wing
+  </h1>
+  <article>
+    <div
+      className="images"
+    >
+      <div
+        className="images-item"
+      >
+        <span
+          className="remove-image"
+          onClick={[Function]}
+        >
+          ❌
+        </span>
+        <img
+          alt="X-wing"
+          className="images-item-image"
+          src="undefined/images/eae03a93.jpeg"
+          title="X-wing"
+        />
+      </div>
+    </div>
+    <form
+      className="add-image-form"
+    >
+      <div
+        className="add-image-form-items"
+      >
+        <div
+          className="add-image-form-item"
+        >
+          <div
+            className="add-image-form-item-inputs"
+          >
+            <label
+              htmlFor="title"
+            >
+              Title
+            </label>
+            <input
+              id="title"
+              name="title"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="add-image-form-error"
+          />
+        </div>
+        <div
+          className="add-image-form-item"
+        >
+          <div
+            className="add-image-form-item-inputs"
+          >
+            <label
+              htmlFor="description"
+            >
+              Description
+            </label>
+            <input
+              id="description"
+              name="description"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="add-image-form-error"
+          />
+        </div>
+        <div
+          className="add-image-form-item"
+        >
+          <div
+            className="add-image-form-item-inputs"
+          >
+            <label
+              htmlFor="image"
+            >
+              Image
+            </label>
+            <input
+              accept="image/png, image/jpeg, image/jpg"
+              id="image"
+              type="file"
+            />
+          </div>
+          <div
+            className="add-image-form-error"
+          />
+        </div>
+        <button
+          onClick={[Function]}
+          type="submit"
+        >
+          Ajouter
+        </button>
+      </div>
+      <div />
+    </form>
+    <div
+      className="object_descriptions"
+    >
+      <div
+        className="properties"
+      >
+        <h2
+          className="properties-title"
+        >
+          Properties
+        </h2>
+        <ul
+          className="properties-attributes"
+        >
+          <li
+            className=""
+          >
+            <div
+              className="propertie-label"
+            >
+              Model
+            </div>
+            <div
+              className="propertie-value-unit"
+            >
+              <div
+                className="propertie-value"
+              >
+                T-65 X-wing
+              </div>
+              
+            </div>
+          </li>
+          <li
+            className=""
+          >
+            <div
+              className="propertie-label"
+            >
+              Starship class
+            </div>
+            <div
+              className="propertie-value-unit"
+            >
+              <div
+                className="propertie-value"
+              >
+                Starfighter
+              </div>
+              
+            </div>
+          </li>
+          <li
+            className=""
+          >
+            <div
+              className="propertie-label"
+            >
+              Manufacturers
+            </div>
+            <div
+              className="propertie-value-unit"
+            >
+              <div
+                className="propertie-value"
+              >
+                <ul
+                  className="propertie-value-array"
+                >
+                  <li
+                    className="propertie-value-array-item"
+                  >
+                    Incom Corporation
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+          </li>
+          <li
+            className=""
+          >
+            <div
+              className="propertie-label"
+            >
+              Cost in credits
+            </div>
+            <div
+              className="propertie-value-unit"
+            >
+              <div
+                className="propertie-value"
+              >
+                149999
+              </div>
+              <div
+                className="properties-unit"
+              >
+                credits
+              </div>
+            </div>
+          </li>
+          <li
+            className=""
+          >
+            <div
+              className="propertie-label"
+            >
+              Length
+            </div>
+            <div
+              className="propertie-value-unit"
+            >
+              <div
+                className="propertie-value"
+              >
+                12.5
+              </div>
+              <div
+                className="properties-unit"
+              >
+                m
+              </div>
+            </div>
+          </li>
+          <li
+            className="helper"
+            title="The number of personnel needed to run or pilot this starship"
+          >
+            <div
+              className="propertie-label"
+            >
+              Crew
+            </div>
+            <div
+              className="propertie-value-unit"
+            >
+              <div
+                className="propertie-value"
+              >
+                1
+              </div>
+              
+            </div>
+          </li>
+          <li
+            className="helper"
+            title="The number of non-essentiel people this starship can transport"
+          >
+            <div
+              className="propertie-label"
+            >
+              Passengers
+            </div>
+            <div
+              className="propertie-value-unit"
+            >
+              <div
+                className="propertie-value"
+              >
+                0
+              </div>
+              
+            </div>
+          </li>
+          <li
+            className="helper"
+            title="The maximum speed of this starship in atmosphere"
+          >
+            <div
+              className="propertie-label"
+            >
+              Max atmosphering speed
+            </div>
+            <div
+              className="propertie-value-unit"
+            >
+              <div
+                className="propertie-value"
+              >
+                1050
+              </div>
+              
+            </div>
+          </li>
+          <li
+            className="helper"
+            title="The class of this starships hyperdrive"
+          >
+            <div
+              className="propertie-label"
+            >
+              Hyperdrive rating
+            </div>
+            <div
+              className="propertie-value-unit"
+            >
+              <div
+                className="propertie-value"
+              >
+                1
+              </div>
+              
+            </div>
+          </li>
+          <li
+            className="helper"
+            title="The Maximum number of Megalights this starship can travel in a standard hour"
+          >
+            <div
+              className="propertie-label"
+            >
+              MGLT
+            </div>
+            <div
+              className="propertie-value-unit"
+            >
+              <div
+                className="propertie-value"
+              >
+                100
+              </div>
+              
+            </div>
+          </li>
+          <li
+            className=""
+          >
+            <div
+              className="propertie-label"
+            >
+              cargo capacity
+            </div>
+            <div
+              className="propertie-value-unit"
+            >
+              <div
+                className="propertie-value"
+              >
+                110
+              </div>
+              <div
+                className="properties-unit"
+              >
+                kg
+              </div>
+            </div>
+          </li>
+          <li
+            className="helper"
+            title="The maximum length of time that this starship can provide consumables for its entire crew without having to resupply"
+          >
+            <div
+              className="propertie-label"
+            >
+              Consumables
+            </div>
+            <div
+              className="propertie-value-unit"
+            >
+              <div
+                className="propertie-value"
+              >
+                1 week
+              </div>
+              
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+        className="link-object"
+      >
+        <h2
+          className="link-object-title"
+        >
+          Pilots
+        </h2>
+         
+        <ul
+          className="link-object-list"
+        >
+          <li>
+            <a
+              className="link"
+              href="/person/cGVvcGxlOjE="
+              onClick={[Function]}
+            >
+              <span
+                className="link-object-item"
+              >
+                <span>
+                  Luke Skywalker
+                </span>
+                <span>
+                  <img
+                    alt="luke skywalker"
+                    src="undefined/images/78092401.jpeg"
+                    title="luke skywalker"
+                  />
+                </span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              className="link"
+              href="/person/cGVvcGxlOjk="
+              onClick={[Function]}
+            >
+              <span
+                className="link-object-item"
+              >
+                <span>
+                  Biggs Darklighter
+                </span>
+                <span>
+                  <img
+                    alt="Biggs Darklighter"
+                    src="undefined/images/cc018650.jpeg"
+                    title="Biggs Darklighter"
+                  />
+                </span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              className="link"
+              href="/person/cGVvcGxlOjE4"
+              onClick={[Function]}
+            >
+              <span
+                className="link-object-item"
+              >
+                <span>
+                  Wedge Antilles
+                </span>
+                <span
+                  className="link-object-item-not-image"
+                >
+                  Any images define
+                </span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              className="link"
+              href="/person/cGVvcGxlOjE5"
+              onClick={[Function]}
+            >
+              <span
+                className="link-object-item"
+              >
+                <span>
+                  Jek Tono Porkins
+                </span>
+                <span
+                  className="link-object-item-not-image"
+                >
+                  Any images define
+                </span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</section>
+`;
+
+exports[`Test Starship error 1`] = `
+<div>
+  Une erreur inconnue s'est produite 
+  : Network error: Une erreur :-)
+</div>
+`;
+
+exports[`Test Starship loading 1`] = `
+<div
+  className="object_loading"
+>
+  
+</div>
+`;

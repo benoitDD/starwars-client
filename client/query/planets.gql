@@ -1,0 +1,23 @@
+#import './fragments.gql'
+
+query AllPlanets($pageSize: Int, $after: String, $before: String){
+  allPlanets(pageSize: $pageSize, after: $after, before: $before) {
+    pageInfo {
+      endCursor
+      startCursor
+      hasNextPage
+      hasPreviousPage
+      totalCount
+    }
+    planets {
+      name
+      id
+    }
+  }
+}
+
+query Planet($id: ID!){
+  planet(id: $id) {
+    ...PlanetFragmentMore
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "starwars-api": {
+      "schemaPath": "starwars.json",
+      "extensions": {
+        "endpoints": {
+          "default": "http://192.168.1.69:9090/graphql"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"__schema":{"types":[{"kind":"UNION","name":"SearchResult","possibleTypes":[{"name":"Person"},{"name":"Planet"},{"name":"Specie"},{"name":"Vehicle"},{"name":"Starship"}]}]}}

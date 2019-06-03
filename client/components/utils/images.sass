@@ -1,0 +1,22 @@
+@import '../../scss/properties.scss'
+
+.images
+    display: flex
+    flex-direction: row
+    align-items: center
+
+    height: 220px
+
+    overflow-x: auto
+    overflow-y: hidden
+    scrollbar-color: $secondary_color grey
+    scrollbar-width: thin
+
+    background-color: rgba(144, 138, 138, 0.178)
+    .images-item
+        position: relative
+        padding-left: 5px
+        padding-right: 5px
+        .images-item-image
+            max-height: 200px
+            max-width: 300px

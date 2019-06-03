@@ -1,0 +1,13 @@
+#import './fragments.gql'
+
+mutation AddImageHeader($inputAddImage: InputAddImage!){
+    addImageHeader(inputAddImage: $inputAddImage){
+        ...ResponseMutationFragment
+    }
+}
+
+mutation RemoveImage($inputRemoveImage: InputRemoveImage!) {
+    removeImage(inputRemoveImage: $inputRemoveImage){
+        ...ResponseMutationFragment
+    }
+}

@@ -1,0 +1,23 @@
+#import './fragments.gql'
+
+query AllVehicles($pageSize: Int, $after: String, $before: String){
+  allVehicles(pageSize: $pageSize, after: $after, before: $before) {
+    pageInfo {
+      endCursor
+      startCursor
+      hasNextPage
+      hasPreviousPage
+      totalCount
+    }
+    vehicles {
+      name
+      id
+    }
+  }
+}
+
+query Vehicle($id: ID!){
+  vehicle(id: $id) {
+    ...VehicleFragmentMore
+  }
+}

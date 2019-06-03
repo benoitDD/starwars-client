@@ -1,0 +1,56 @@
+{
+    "data": {
+        "allStarships": {
+            "pageInfo": {
+                "endCursor": "YXJyYXljb25uZWN0aW9uOjI5",
+                "startCursor": "YXJyYXljb25uZWN0aW9uOjIw",
+                "hasNextPage": true,
+                "hasPreviousPage": true,
+                "totalCount": 37,
+                "__typename": "PageInfo"
+            },
+            "starships": [{
+                "name": "Scimitar",
+                "id": "c3RhcnNoaXBzOjQx",
+                "__typename": "Starship"
+            }, {
+                "name": "J-type diplomatic barge",
+                "id": "c3RhcnNoaXBzOjQz",
+                "__typename": "Starship"
+            }, {
+                "name": "AA-9 Coruscant freighter",
+                "id": "c3RhcnNoaXBzOjQ3",
+                "__typename": "Starship"
+            }, {
+                "name": "Jedi starfighter",
+                "id": "c3RhcnNoaXBzOjQ4",
+                "__typename": "Starship"
+            }, {
+                "name": "H-type Nubian yacht",
+                "id": "c3RhcnNoaXBzOjQ5",
+                "__typename": "Starship"
+            }, {
+                "name": "Republic Assault ship",
+                "id": "c3RhcnNoaXBzOjUy",
+                "__typename": "Starship"
+            }, {
+                "name": "Solar Sailer",
+                "id": "c3RhcnNoaXBzOjU4",
+                "__typename": "Starship"
+            }, {
+                "name": "Trade Federation cruiser",
+                "id": "c3RhcnNoaXBzOjU5",
+                "__typename": "Starship"
+            }, {
+                "name": "Theta-class T-2c shuttle",
+                "id": "c3RhcnNoaXBzOjYx",
+                "__typename": "Starship"
+            }, {
+                "name": "Republic attack cruiser",
+                "id": "c3RhcnNoaXBzOjYz",
+                "__typename": "Starship"
+            }],
+            "__typename": "AllStarshipsResponse"
+        }
+    }
+}

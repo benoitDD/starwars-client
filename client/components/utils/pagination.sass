@@ -1,0 +1,30 @@
+@import '../../scss/properties.scss'
+
+$button_radius: 5px
+
+.pagination
+    margin: auto
+    max-width: 700px
+    .pagination-list
+        .pagination-list-item
+            list-style: none
+    .pagination-header
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        .pagination-actions
+            button
+                cursor: pointer
+                border: none
+                height: 25px
+                background-color: $secondary_color
+                color: $main_color
+            button:first-child
+                border-bottom-left-radius: $button_radius
+                border-top-left-radius: $button_radius
+            button:last-child
+                border-bottom-right-radius: $button_radius
+                border-top-right-radius: $button_radius
+            button[disabled]
+                cursor: initial
+                background-color: $main_color_contrast

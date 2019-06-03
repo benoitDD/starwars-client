@@ -1,0 +1,23 @@
+#import './fragments.gql'
+
+query AllPersons($pageSize: Int, $after: String, $before: String){
+  allPersons(pageSize: $pageSize, after: $after, before: $before) {
+    pageInfo {
+      endCursor
+      startCursor
+      hasNextPage
+      hasPreviousPage
+      totalCount
+    }
+    persons {
+      name
+      id
+    }
+  }
+}
+
+query Person($id: ID!){
+  person(id: $id) {
+    ...PersonFragmentMore
+  }
+}

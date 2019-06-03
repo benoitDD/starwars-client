@@ -1,0 +1,25 @@
+query Search($text:String!){ 
+    search(text:$text){
+        __typename
+        ... on Person{
+            id
+            name
+        }
+        ... on Planet{
+            id
+            name
+        }
+        ... on Specie{
+            id
+            name
+        }
+        ... on Starship{
+            id
+            name
+        }
+        ... on Vehicle{
+            id
+            name
+        }
+    }
+}

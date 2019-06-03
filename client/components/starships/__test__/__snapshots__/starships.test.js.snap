@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test starhips 1`] = `
+<div
+  className="pagination"
+>
+  <div
+    className="pagination-header"
+  >
+    <span>
+      37
+       élément(s)
+    </span>
+    <span
+      className="pagination-actions"
+    >
+      <button
+        disabled={false}
+        onClick={[Function]}
+      >
+        Précedent
+      </button>
+      <button
+        disabled={false}
+        onClick={[Function]}
+      >
+        Suivant
+      </button>
+    </span>
+  </div>
+  <ul
+    className="pagination-list"
+  >
+    <li
+      className="pagination-list-item"
+    >
+      <a
+        className="link"
+        href="/starship/c3RhcnNoaXBzOjQx"
+        onClick={[Function]}
+      >
+        Scimitar
+      </a>
+    </li>
+    <li
+      className="pagination-list-item"
+    >
+      <a
+        className="link"
+        href="/starship/c3RhcnNoaXBzOjQz"
+        onClick={[Function]}
+      >
+        J-type diplomatic barge
+      </a>
+    </li>
+    <li
+      className="pagination-list-item"
+    >
+      <a
+        className="link"
+        href="/starship/c3RhcnNoaXBzOjQ3"
+        onClick={[Function]}
+      >
+        AA-9 Coruscant freighter
+      </a>
+    </li>
+    <li
+      className="pagination-list-item"
+    >
+      <a
+        className="link"
+        href="/starship/c3RhcnNoaXBzOjQ4"
+        onClick={[Function]}
+      >
+        Jedi starfighter
+      </a>
+    </li>
+    <li
+      className="pagination-list-item"
+    >
+      <a
+        className="link"
+        href="/starship/c3RhcnNoaXBzOjQ5"
+        onClick={[Function]}
+      >
+        H-type Nubian yacht
+      </a>
+    </li>
+    <li
+      className="pagination-list-item"
+    >
+      <a
+        className="link"
+        href="/starship/c3RhcnNoaXBzOjUy"
+        onClick={[Function]}
+      >
+        Republic Assault ship
+      </a>
+    </li>
+    <li
+      className="pagination-list-item"
+    >
+      <a
+        className="link"
+        href="/starship/c3RhcnNoaXBzOjU4"
+        onClick={[Function]}
+      >
+        Solar Sailer
+      </a>
+    </li>
+    <li
+      className="pagination-list-item"
+    >
+      <a
+        className="link"
+        href="/starship/c3RhcnNoaXBzOjU5"
+        onClick={[Function]}
+      >
+        Trade Federation cruiser
+      </a>
+    </li>
+    <li
+      className="pagination-list-item"
+    >
+      <a
+        className="link"
+        href="/starship/c3RhcnNoaXBzOjYx"
+        onClick={[Function]}
+      >
+        Theta-class T-2c shuttle
+      </a>
+    </li>
+    <li
+      className="pagination-list-item"
+    >
+      <a
+        className="link"
+        href="/starship/c3RhcnNoaXBzOjYz"
+        onClick={[Function]}
+      >
+        Republic attack cruiser
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Test starhips error 1`] = `
+<div>
+  Error: 
+  Network error: Une erreur :-)
+</div>
+`;
+
+exports[`Test starhips loading 1`] = `
+<div>
+  Loading
+</div>
+`;

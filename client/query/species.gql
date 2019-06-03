@@ -1,0 +1,23 @@
+#import './fragments.gql'
+
+query AllSpecies($pageSize: Int, $after: String, $before: String){
+  allSpecies(pageSize: $pageSize, after: $after, before: $before) {
+    pageInfo {
+      endCursor
+      startCursor
+      hasNextPage
+      hasPreviousPage
+      totalCount
+    }
+    species {
+      name
+      id
+    }
+  }
+}
+
+query Specie($id: ID!){
+  specie(id: $id) {
+    ...SpecieFragmentMore
+  }
+}

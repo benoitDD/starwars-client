@@ -1,0 +1,101 @@
+{
+	"data": {
+		"starship": {
+			"id": "c3RhcnNoaXBzOjEy",
+			"name": "X-wing",
+			"model": "T-65 X-wing",
+			"starshipClass": "Starfighter",
+			"manufacturers": ["Incom Corporation"],
+			"costInCredits": 149999,
+			"length": 12.5,
+			"crew": "1",
+			"passengers": "0",
+			"maxAtmospheringSpeed": 1050,
+			"hyperdriveRating": 1,
+			"MGLT": 100,
+			"cargoCapacity": 110,
+			"consumables": "1 week",
+			"__typename": "Starship",
+			"persons": {
+				"persons": [{
+					"id": "cGVvcGxlOjE=",
+					"name": "Luke Skywalker",
+					"birthYear": "19BBY",
+					"eyeColor": "blue",
+					"gender": "male",
+					"hairColor": "blond",
+					"height": 172,
+					"mass": 77,
+					"skinColor": "fair",
+					"__typename": "Person",
+					"more": {
+						"imagesHeader": [{
+							"_id": "5cf1935c0b953f43f84432f4",
+							"description": "",
+							"filename": "/images/78092401.jpeg",
+							"title": "luke skywalker",
+							"__typename": "Image"
+						}],
+						"__typename": "ObjectMore"
+					}
+				}, {
+					"id": "cGVvcGxlOjk=",
+					"name": "Biggs Darklighter",
+					"birthYear": "24BBY",
+					"eyeColor": "brown",
+					"gender": "male",
+					"hairColor": "black",
+					"height": 183,
+					"mass": 84,
+					"skinColor": "light",
+					"__typename": "Person",
+					"more": {
+						"imagesHeader": [{
+							"_id": "5cf43fa206de4423f85bbbab",
+							"description": "",
+							"filename": "/images/cc018650.jpeg",
+							"title": "Biggs Darklighter",
+							"__typename": "Image"
+						}],
+						"__typename": "ObjectMore"
+					}
+				}, {
+					"id": "cGVvcGxlOjE4",
+					"name": "Wedge Antilles",
+					"birthYear": "21BBY",
+					"eyeColor": "hazel",
+					"gender": "male",
+					"hairColor": "brown",
+					"height": 170,
+					"mass": 77,
+					"skinColor": "fair",
+					"__typename": "Person",
+					"more": null
+				}, {
+					"id": "cGVvcGxlOjE5",
+					"name": "Jek Tono Porkins",
+					"birthYear": "unknown",
+					"eyeColor": "blue",
+					"gender": "male",
+					"hairColor": "brown",
+					"height": 180,
+					"mass": 110,
+					"skinColor": "fair",
+					"__typename": "Person",
+					"more": null
+				}],
+				"__typename": "AllPersonsResponse"
+			},
+			"more": {
+				"imagesHeader": [{
+					"_id": "5cf3d27a568ed810fc6d4146",
+					"description": "",
+					"filename": "/images/eae03a93.jpeg",
+					"title": "X-wing",
+					"__typename": "Image"
+				}],
+				"__typename": "ObjectMore"
+			}
+		}
+	}
+}

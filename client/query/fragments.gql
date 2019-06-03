@@ -1,0 +1,214 @@
+fragment PersonFragment on Person {
+    id
+    name
+    birthYear
+    eyeColor
+    gender
+    hairColor
+    height
+    mass
+    skinColor
+}
+
+fragment PersonFragmentMore on Person {
+    ...PersonFragment
+    homeworld {
+      ...PlanetFragment
+      more {
+        ...ObjectMoreFragmentLight
+      }
+    }
+    specie {
+      ...SpecieFragment
+      more {
+        ...ObjectMoreFragmentLight
+      }
+    }
+    starships(pageSize: 100) {
+      starships {
+        ...StarshipFragment
+        more {
+          ...ObjectMoreFragmentLight
+        }
+      }
+    }
+    vehicles(pageSize: 100) {
+      vehicles {
+        ...VehicleFragment
+        more {
+          ...ObjectMoreFragmentLight
+        }
+      }
+    }
+    more {
+      ...ObjectMoreFragment
+    }
+}
+
+fragment PlanetFragment on Planet {
+    id
+    name
+    diameter
+    rotationPeriod
+    orbitalPeriod
+    gravity
+    population
+    climates
+    terrains
+    surfaceWater
+}
+
+fragment PlanetFragmentMore on Planet {
+    ...PlanetFragment
+    persons(pageSize: 100) {
+      persons {
+        ...PersonFragment
+        more {
+          ...ObjectMoreFragmentLight
+        }
+      }
+    }
+    more {
+      ...ObjectMoreFragment
+    }
+}
+
+fragment SpecieFragment on Specie {
+    id
+    name
+    classification
+    designation
+    averageHeight
+    averageLifespan
+    eyeColors
+    hairColors
+    skinColors
+    language
+}
+
+fragment SpecieFragmentMore on Specie {
+    ...SpecieFragment
+    persons(pageSize: 100) {
+      persons {
+        ...PersonFragment
+        more {
+          ...ObjectMoreFragmentLight
+        }
+      }
+    }
+    planet {
+      ...PlanetFragment
+      more {
+        ...ObjectMoreFragmentLight
+      }
+    }
+    more {
+      ...ObjectMoreFragment
+    }
+}
+
+fragment StarshipFragment on Starship {
+  id
+  name
+  model
+  starshipClass
+  manufacturers
+  costInCredits
+  length
+  crew
+  passengers
+  maxAtmospheringSpeed
+  hyperdriveRating
+  MGLT
+  cargoCapacity
+  consumables
+}
+
+fragment StarshipFragmentMore on Starship {
+    ...StarshipFragment
+    persons(pageSize: 100) {
+      persons {
+        ...PersonFragment
+        more {
+          ...ObjectMoreFragmentLight
+        }
+      }
+    }
+    more {
+      ...ObjectMoreFragment
+    }
+}
+
+fragment VehicleFragment on Vehicle {
+    id
+    name
+    model
+    vehicleClass
+    manufacturers
+    costInCredits
+    length
+    crew
+    passengers
+    maxAtmospheringSpeed
+    cargoCapacity
+    consumables
+}
+
+fragment VehicleFragmentMore on Vehicle {
+    ...VehicleFragment
+    persons(pageSize: 100) {
+      persons {
+        ...PersonFragment
+        more {
+          ...ObjectMoreFragmentLight
+        }
+      }
+    }
+    more {
+      ...ObjectMoreFragment
+    }
+}
+
+fragment ObjectMoreFragment on ObjectMore {
+    imagesHeader {
+        _id
+        description
+        filename
+        title
+    }
+}
+
+fragment ObjectMoreFragmentLight on ObjectMore {
+    imagesHeader(first: true) {
+        _id
+        description
+        filename
+        title
+    }
+}
+
+fragment ResponseMutationFragment on ResponseMutation {
+  success
+  message
+  details {
+    key
+    message
+  }
+  object {
+    ... on Person {
+      ...PersonFragmentMore
+    }
+    ... on Planet {
+      ...PlanetFragmentMore
+    }
+    ... on Specie {
+      ...SpecieFragmentMore
+    }
+    ... on Starship {
+      ...StarshipFragmentMore
+    }
+    ... on Vehicle {
+      ...VehicleFragmentMore
+    }
+  }
+}

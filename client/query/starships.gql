@@ -1,0 +1,40 @@
+#import './fragments.gql'
+
+query AllStarships($pageSize: Int, $after: String, $before: String){
+  allStarships(pageSize: $pageSize, after: $after, before: $before) {
+    pageInfo {
+      endCursor
+      startCursor
+      hasNextPage
+      hasPreviousPage
+      totalCount
+    }
+    starships {
+      name
+      id
+    }
+  }
+}
+
+query Starship($id: ID!){
+  starship(id: $id) {
+    ...StarshipFragmentMore
+  }
+}
+
+fragment StarshipFragment on Starship {
+  id
+  name
+  model
+  starshipClass
+  manufacturers
+  costInCredits
+  length
+  crew
+  passengers
+  maxAtmospheringSpeed
+  hyperdriveRating
+  MGLT
+  cargoCapacity
+  consumables
+}

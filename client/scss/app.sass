@@ -1,0 +1,26 @@
+@import './properties.scss'
+html
+    body
+        color: $main_color
+        
+        background-image: url(../images/starwars-background.jpg)   
+        background-position: center center
+        background-repeat: no-repeat
+        background-attachment: fixed
+        background-size: cover
+
+        font-family:  "Comic Sans MS"
+        #root
+            .main
+                margin-top: $header_nav_height + $main_margin_top
+                display: flex
+                flex-direction: row
+                .part1
+                    width: 20%
+                    position: sticky
+                    top: $header_nav_height + $main_margin_top
+                    height: calc(100vh - 4rem)
+
+                .part2
+                    width: 80%
+                    padding-left: 20px
