@@ -10,6 +10,9 @@ import Species from './species/species'
 import Specie from './species/specie'
 import Vehicles from './vehicles/vehicles'
 import Vehicle from './vehicles/vehicle'
+import SignIn from './sign/signin'
+import SignUp from './sign/signup'
+import HandleError from './utils/handleError'
 
 function Sections(){
 	return(
@@ -25,6 +28,9 @@ function Sections(){
 				<Specie path = '/specie/:id'/>
 				<Vehicles path = '/vehicles'/>
 				<Vehicle path = '/vehicle/:id'/>
+				<SignUp path = '/sign-up'/>
+				<SignIn path = '/sign-in'/>
+				<HandleError path = '/error'/>
 			</Router>
 		</section>
 	)

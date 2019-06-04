@@ -2,11 +2,16 @@ import React, {Component} from 'react'
 import {Query} from 'react-apollo'
 import PropTypes from 'prop-types'
 import './pagination.sass'
+import Loading from '../utils/loading'
+import HandleError from '../utils/handleError'
 
 class Pagination extends Component {
 
 	constructor(props){
 		super(props)
+		this.state = {
+			error: null
+		}
 	}
 
 	getData(data){
@@ -17,17 +22,21 @@ class Pagination extends Component {
 		return this.getData(data).pageInfo
 	}
 
+	fetchMore(fetchMoreFunc, variables){
+		fetchMoreFunc({
+			variables,
+			updateQuery: (prev, {fetchMoreResult}) => {
+				return fetchMoreResult
+			}
+		}).catch(error => this.setState({error}))
+	}
+
 	previousButton(data, fetchMore){
 		const pageInfo = this.getPageInfo(data)
 		return (
-			<button disabled = {!pageInfo.hasPreviousPage} onClick = {() => fetchMore({
-				variables: {
-					before: pageInfo.startCursor
-				},
-				updateQuery: (prev, {fetchMoreResult}) => {
-					return fetchMoreResult
-				}
-			})}>
+			<button disabled = {!pageInfo.hasPreviousPage} onClick = {() => 
+				this.fetchMore(fetchMore, {before: pageInfo.startCursor})
+			}>
 					Précedent
 			</button>
 		)
@@ -36,14 +45,9 @@ class Pagination extends Component {
 	nextButton(data, fetchMore){
 		const pageInfo = this.getPageInfo(data)
 		return (
-			<button disabled = {!pageInfo.hasNextPage} onClick = {() => fetchMore({
-				variables: {
-					after: pageInfo.endCursor
-				},
-				updateQuery: (prev, {fetchMoreResult}) => {
-					return fetchMoreResult
-				}
-			})}>
+			<button disabled = {!pageInfo.hasNextPage} onClick = {() => 
+				this.fetchMore(fetchMore, {after: pageInfo.endCursor})
+			}>
 					Suivant
 			</button>
 		)
@@ -54,8 +58,9 @@ class Pagination extends Component {
 			<Query query = {this.props.query} variables = {{pageSize: 10}}>
 				{
 					({data, loading, error, fetchMore}) => {
-						if (loading) return <div>Loading</div>
-						if (error) return <div>Error: {error.message}</div>
+						if (loading) return <div id = 'pagination-loading'><Loading/></div>
+						const _error = error || this.state.error
+						if (_error) return <HandleError error = {_error}/>
 						const pagination = this.getData(data)
 						const pageInfo = this.getPageInfo(data)
 						return (

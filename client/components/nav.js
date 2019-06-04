@@ -1,13 +1,6 @@
 import React from 'react'
-import {Link} from '@reach/router'
 import './nav.sass'
-
-function NavItem(props){
-	return <Link {...props}  
-		getProps={({ isCurrent }) => {
-			return isCurrent ? {className:  'active'} : {}
-		}}/>
-}
+import NavItem from './utils/navItem'
 
 function Nav(){
 	return(

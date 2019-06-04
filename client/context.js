@@ -8,8 +8,14 @@ class Context extends Component {
 		super(props)
 		this.state = {
 			modeUpdate: true,
-			toogleModeUpdate: this.toogleModeUpdate.bind(this)
+			toogleModeUpdate: this.toogleModeUpdate.bind(this),
+			user: null,
+			setUser: this.setUser.bind(this)
 		}
+	}
+
+	setUser(user){
+		this.setState({user: user})
 	}
 
 	toogleModeUpdate(){

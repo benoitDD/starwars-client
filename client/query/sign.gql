@@ -1,0 +1,40 @@
+#import './fragments.gql'
+
+query SignIn($login:String!, $password:String!){
+    signIn(login:$login, password:$password){
+        success
+        message
+        details{
+            key
+            message
+        }
+        token
+        user{
+            ...UserFragment
+        }
+    }
+}
+
+query ReloadSignIn{
+    reloadSignIn{
+        success
+        message
+        user{
+            ...UserFragment
+        }
+    }
+}
+
+mutation SignUp($login:String!, $password:String!){
+    signUp(login:$login, password:$password){
+        success
+        message
+        details{
+            key
+            message
+        }
+        user{
+            ...UserFragment
+        }
+    }
+}
