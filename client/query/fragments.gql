@@ -212,3 +212,7 @@ fragment ResponseMutationFragment on ResponseMutation {
     }
   }
 }
+
+fragment UserFragment on User {
+    login
+}

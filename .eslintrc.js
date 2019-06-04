@@ -1,3 +1,5 @@
+const plateforme = global.process.platform === 'linux' ? 'unix' : 'windows'
+
 module.exports = {
     "env": {
         "browser": true,
@@ -36,7 +38,7 @@ module.exports = {
         ],
         "linebreak-style": [
             "error",
-            "windows"
+            plateforme
         ],
         "quotes": [
             "error",

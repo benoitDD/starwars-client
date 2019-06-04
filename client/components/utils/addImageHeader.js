@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import mime from 'mime-types'
 import './addImageHeader.sass'
 import updateActive from '../../hoc/updateActive'
+import HandleError from './handleError'
 
 class AddImageForm extends Component {
 	constructor(props){
@@ -105,7 +106,8 @@ class AddImageForm extends Component {
 					<button type = 'submit' onClick = {this.addImage}>Ajouter</button>
 				</div>
 				<div>
-					{this.errorServer() || this.successAddImage()}
+					{this.errorServer() || this.successAddImage()
+					|| (this.props.error && <HandleError error = {this.props.error}/>)}
 				</div>
 			</form>
 		)
@@ -114,13 +116,14 @@ class AddImageForm extends Component {
 
 AddImageForm.propTypes = {
 	addImage: PropTypes.func.isRequired,
-	response: PropTypes.object
+	response: PropTypes.object,
+	error: PropTypes.object
 }
 
 function AddImageHeader(props){
 	return (
 		<Mutation mutation = {AddImageHeaderQuery} >
-			{(addImageHeader, {data}) => {
+			{(addImageHeader, {data, error}) => {
 				const addImage = image => {
 					addImageHeader({ variables: { 
 						inputAddImage: {
@@ -130,7 +133,7 @@ function AddImageHeader(props){
 						}
 					}})
 				}
-				return <AddImageForm addImage={addImage} response = {data && data.addImageHeader} />
+				return <AddImageForm addImage={addImage} response = {data && data.addImageHeader} error = {error} />
 			}}
 		</Mutation>
 	)

@@ -18,10 +18,10 @@ function messageCodeErreur(code, message){
 	switch(code){
 	case 'INTERNAL_SERVER_ERROR':
 		return 'Une erreur interne du serveur s\'est produite, attendez un moment et recharger la page'
-	case 'BAD_USER_INPUT':
-		return message
+	case 'TOKEN_INVALID':
+		return 'Le token d\'authentification est invalide'
 	default:
-		return `Le code erreur ${code} est inconnu`
+		return `Le code erreur ${code} est inconnu avec son message: ${message}`
 	}
 }
 
@@ -42,7 +42,11 @@ function handleGraphQLError(graphQLError){
 	return <div>Une erreur s&apos;est produite{graphQLError.message}</div>
 }
 
-function HandleError({error}) {
+function HandleError(props) {
+	var {error} = props
+	if(!error){
+		error = props.location && props.location.state && props.location.state.error
+	}
 	const graphqlError = getGraphqlError(error)
 	if(graphqlError){
 		return handleGraphQLError(graphqlError)
@@ -51,7 +55,8 @@ function HandleError({error}) {
 }
 
 HandleError.propTypes = {
-	error: PropTypes.object
+	error: PropTypes.object,
+	location: PropTypes.object
 }
 
 export default HandleError

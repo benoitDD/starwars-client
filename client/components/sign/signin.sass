@@ -1,0 +1,30 @@
+@import '../../scss/properties.scss'
+
+#signin
+    max-width: 700px
+    #signin-form
+        .signin-input-item
+            display: flex
+            flex-direction: row
+            margin-bottom: 10px
+            label
+                width: 30%
+            input
+                width: 70%
+                padding-left: 10px
+                height: 30px
+                border-radius: 5px
+        #signin-button
+            text-align: center
+            button
+                background-color: $secondary_color
+                color: $main_color
+                border: 0px
+                border-radius: 5px
+                height: 25px
+                cursor: pointer
+        .signin-error
+            color: red
+        #signin-loading
+            text-align: center
+            margin-top: 10px
