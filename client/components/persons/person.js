@@ -10,6 +10,9 @@ import '../objects.sass'
 import Loading from '../utils/loading'
 import HandleError from '../utils/handleError'
 
+
+
+
 function getProperties(person){
 	return [
 		{
