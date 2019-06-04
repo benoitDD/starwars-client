@@ -147,13 +147,15 @@ exports[`Test starhips 1`] = `
 
 exports[`Test starhips error 1`] = `
 <div>
-  Error: 
-  Network error: Une erreur :-)
+  Une erreur inconnue s'est produite 
+  : Network error: Une erreur :-)
 </div>
 `;
 
 exports[`Test starhips loading 1`] = `
-<div>
-  Loading
+<div
+  id="pagination-loading"
+>
+  
 </div>
 `;
