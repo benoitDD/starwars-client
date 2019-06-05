@@ -5,7 +5,9 @@ import PropTypes from 'prop-types'
 import mime from 'mime-types'
 import './addImageHeader.sass'
 import updateActive from '../../hoc/updateActive'
+import componentPrivate from '../../hoc/componentPrivate'
 import HandleError from './handleError'
+import {compose} from '../../utils'
 
 class AddImageForm extends Component {
 	constructor(props){
@@ -144,4 +146,4 @@ AddImageHeader.propTypes = {
 	typeObject: PropTypes.string.isRequired
 }
 
-export default updateActive(AddImageHeader)
+export default compose(updateActive, componentPrivate)(AddImageHeader)
