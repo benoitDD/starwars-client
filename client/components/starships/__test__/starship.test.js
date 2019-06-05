@@ -7,6 +7,8 @@ import StarshipComponent from '../starship'
 import dataStarship from '../../test/starship.json'
 
 jest.mock('../../../hoc/updateActive.js')
+jest.mock('../../../hoc/componentPrivate.js')
+jest.mock('../../../context.js')
 
 const id = dataStarship.data.starship.id
 

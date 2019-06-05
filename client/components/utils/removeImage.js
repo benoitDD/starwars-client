@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import {RemoveImage as RemoveImageQuery} from '../../query/commun.gql'
 import './removeImage.sass'
 import updateActive from '../../hoc/updateActive'
+import componentPrivate from '../../hoc/componentPrivate'
+import {compose} from '../../utils'
 
 function RemoveImage({idImage, idExternal}){
 	return (
@@ -29,4 +31,4 @@ RemoveImage.propTypes = {
 	idExternal: PropTypes.string.isRequired
 }
 
-export default updateActive(RemoveImage)
+export default compose(updateActive, componentPrivate)(RemoveImage)
