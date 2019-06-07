@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Suspense} from 'react'
 import ReactDOM from 'react-dom'
 import App from './app'
 import {ApolloClient} from 'apollo-client'
@@ -9,12 +9,16 @@ import {createUploadLink} from 'apollo-upload-client'
 import {Context} from './context'
 import {setContext} from 'apollo-link-context'
 import TrySignIn from './components/trySignIn'
+import i18n from './i18n'
 
 const setHeaderLink = setContext((_, {headers}) => {
 	const tokenAuth = localStorage.getItem('token')
 	headers = {...headers}
 	if(tokenAuth){
 		headers.authorization = 'Bearer ' + tokenAuth
+	}
+	if(i18n.language){
+		headers['Accept-Language'] = i18n.language
 	}
 	return {headers}
 })
@@ -31,10 +35,12 @@ const client = new ApolloClient({
 
 ReactDOM.render(
 	<ApolloProvider client={client}>
-		<Context>
-			<TrySignIn>
-				<App />
-			</TrySignIn>
-		</Context>
+		<Suspense fallback={<div>Still loading i18n...</div>}>
+			<Context>
+				<TrySignIn>
+					<App />
+				</TrySignIn>
+			</Context>
+		</Suspense>
 	</ApolloProvider>
 	, document.getElementById('root'))

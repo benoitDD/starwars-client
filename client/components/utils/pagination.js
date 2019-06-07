@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import './pagination.sass'
 import Loading from '../utils/loading'
 import HandleError from '../utils/handleError'
+import {withTranslation} from 'react-i18next'
 
 class Pagination extends Component {
 
@@ -37,7 +38,7 @@ class Pagination extends Component {
 			<button disabled = {!pageInfo.hasPreviousPage} onClick = {() => 
 				this.fetchMore(fetchMore, {before: pageInfo.startCursor})
 			}>
-					Précedent
+				{this.props.t('previous')}
 			</button>
 		)
 	}
@@ -48,7 +49,7 @@ class Pagination extends Component {
 			<button disabled = {!pageInfo.hasNextPage} onClick = {() => 
 				this.fetchMore(fetchMore, {after: pageInfo.endCursor})
 			}>
-					Suivant
+				{this.props.t('next')}
 			</button>
 		)
 	}
@@ -96,8 +97,9 @@ Pagination.propTypes = {
 	query: PropTypes.object.isRequired,
 	nameQuery: PropTypes.string.isRequired,
 	nameObjects: PropTypes.string.isRequired,
-	children: PropTypes.func.isRequired
+	children: PropTypes.func.isRequired,
+	t: PropTypes.func.isRequired
 }
 
 
-export default Pagination
+export default withTranslation()(Pagination)

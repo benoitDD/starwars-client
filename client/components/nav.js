@@ -1,17 +1,23 @@
 import React from 'react'
 import './nav.sass'
 import NavItem from './utils/navItem'
+import {withTranslation} from 'react-i18next'
+import PropTypes from 'prop-types'
 
-function Nav(){
+function Nav({t}){
 	return(
 		<nav className = 'nav'>
-			<NavItem to = '/starships/'>Starships</NavItem>
-			<NavItem to = '/persons/'>Persons</NavItem>
-			<NavItem to = '/planets/'>Planets</NavItem>
-			<NavItem to = '/species/'>Species</NavItem>
-			<NavItem to = '/vehicles/'>Vehicles</NavItem>
+			<NavItem to = '/starships/'>{t('starships')}</NavItem>
+			<NavItem to = '/persons/'>{t('persons')}</NavItem>
+			<NavItem to = '/planets/'>{t('planets')}</NavItem>
+			<NavItem to = '/species/'>{t('species')}</NavItem>
+			<NavItem to = '/vehicles/'>{t('vehicles')}</NavItem>
 		</nav>
 	)
 }
 
-export default Nav
+Nav.propTypes = {
+	t: PropTypes.func.isRequired
+}
+
+export default withTranslation()(Nav)

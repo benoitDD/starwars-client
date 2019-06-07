@@ -13,37 +13,37 @@ import HandleError from '../utils/handleError'
 function getProperties(specie){
 	return [
 		{
-			label: 'Classification',
+			label: 'classification',
 			value: specie.classification
 		},
 		{
-			label: 'Designation',
+			label: 'designation',
 			value: specie.designation
 		},
 		{
-			label: 'Average height',
+			label: 'average.height',
 			value: specie.averageHeight,
 			unit: 'cm'
 		},
 		{
-			label: 'Average life span',
+			label: 'average.life.span',
 			value: specie.averageLifespan,
 			unit: 'y'
 		},
 		{
-			label: 'Eye colors',
+			label: 'eye.colors',
 			value: specie.eyeColors
 		},
 		{
-			label: 'Hair colors',
+			label: 'hair.colors',
 			value: specie.hairColors
 		},
 		{
-			label: 'Skin colors',
+			label: 'skin.colors',
 			value: specie.skinColors
 		},
 		{
-			label: 'Language',
+			label: 'language',
 			value: specie.language
 		}
 	]

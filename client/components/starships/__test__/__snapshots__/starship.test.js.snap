@@ -41,7 +41,7 @@ exports[`Test Starship 1`] = `
             <label
               htmlFor="title"
             >
-              Title
+              title
             </label>
             <input
               id="title"
@@ -64,7 +64,7 @@ exports[`Test Starship 1`] = `
             <label
               htmlFor="description"
             >
-              Description
+              description
             </label>
             <input
               id="description"
@@ -87,7 +87,7 @@ exports[`Test Starship 1`] = `
             <label
               htmlFor="image"
             >
-              Image
+              image
             </label>
             <input
               accept="image/png, image/jpeg, image/jpg"
@@ -103,7 +103,7 @@ exports[`Test Starship 1`] = `
           onClick={[Function]}
           type="submit"
         >
-          Ajouter
+          add
         </button>
       </div>
       <div />
@@ -123,12 +123,12 @@ exports[`Test Starship 1`] = `
           className="properties-attributes"
         >
           <li
-            className=""
+            className="peer"
           >
             <div
               className="propertie-label"
             >
-              Model
+              model
             </div>
             <div
               className="propertie-value-unit"
@@ -142,12 +142,12 @@ exports[`Test Starship 1`] = `
             </div>
           </li>
           <li
-            className=""
+            className="odd"
           >
             <div
               className="propertie-label"
             >
-              Starship class
+              starship.class
             </div>
             <div
               className="propertie-value-unit"
@@ -161,12 +161,12 @@ exports[`Test Starship 1`] = `
             </div>
           </li>
           <li
-            className=""
+            className="peer"
           >
             <div
               className="propertie-label"
             >
-              Manufacturers
+              manufacturers
             </div>
             <div
               className="propertie-value-unit"
@@ -178,7 +178,7 @@ exports[`Test Starship 1`] = `
                   className="propertie-value-array"
                 >
                   <li
-                    className="propertie-value-array-item"
+                    className="propertie-value-array-item peer"
                   >
                     Incom Corporation
                   </li>
@@ -188,12 +188,12 @@ exports[`Test Starship 1`] = `
             </div>
           </li>
           <li
-            className=""
+            className="odd"
           >
             <div
               className="propertie-label"
             >
-              Cost in credits
+              cost.in.credits
             </div>
             <div
               className="propertie-value-unit"
@@ -211,12 +211,12 @@ exports[`Test Starship 1`] = `
             </div>
           </li>
           <li
-            className=""
+            className="peer"
           >
             <div
               className="propertie-label"
             >
-              Length
+              length
             </div>
             <div
               className="propertie-value-unit"
@@ -234,13 +234,13 @@ exports[`Test Starship 1`] = `
             </div>
           </li>
           <li
-            className="helper"
-            title="The number of personnel needed to run or pilot this starship"
+            className="odd helper"
+            title="crew.helper"
           >
             <div
               className="propertie-label"
             >
-              Crew
+              crew
             </div>
             <div
               className="propertie-value-unit"
@@ -254,13 +254,13 @@ exports[`Test Starship 1`] = `
             </div>
           </li>
           <li
-            className="helper"
-            title="The number of non-essentiel people this starship can transport"
+            className="peer helper"
+            title="passengers.helper"
           >
             <div
               className="propertie-label"
             >
-              Passengers
+              passengers
             </div>
             <div
               className="propertie-value-unit"
@@ -274,13 +274,13 @@ exports[`Test Starship 1`] = `
             </div>
           </li>
           <li
-            className="helper"
-            title="The maximum speed of this starship in atmosphere"
+            className="odd helper"
+            title="max.atmosphering.speed.helper"
           >
             <div
               className="propertie-label"
             >
-              Max atmosphering speed
+              max.atmosphering.speed
             </div>
             <div
               className="propertie-value-unit"
@@ -294,13 +294,13 @@ exports[`Test Starship 1`] = `
             </div>
           </li>
           <li
-            className="helper"
-            title="The class of this starships hyperdrive"
+            className="peer helper"
+            title="hyperdrive.rating.helper"
           >
             <div
               className="propertie-label"
             >
-              Hyperdrive rating
+              hyperdrive.rating
             </div>
             <div
               className="propertie-value-unit"
@@ -314,13 +314,13 @@ exports[`Test Starship 1`] = `
             </div>
           </li>
           <li
-            className="helper"
-            title="The Maximum number of Megalights this starship can travel in a standard hour"
+            className="odd helper"
+            title="mglt.helper"
           >
             <div
               className="propertie-label"
             >
-              MGLT
+              mglt
             </div>
             <div
               className="propertie-value-unit"
@@ -334,12 +334,12 @@ exports[`Test Starship 1`] = `
             </div>
           </li>
           <li
-            className=""
+            className="peer"
           >
             <div
               className="propertie-label"
             >
-              cargo capacity
+              cargo.capacity
             </div>
             <div
               className="propertie-value-unit"
@@ -357,13 +357,13 @@ exports[`Test Starship 1`] = `
             </div>
           </li>
           <li
-            className="helper"
-            title="The maximum length of time that this starship can provide consumables for its entire crew without having to resupply"
+            className="odd helper"
+            title="consumables.helper"
           >
             <div
               className="propertie-label"
             >
-              Consumables
+              consumables
             </div>
             <div
               className="propertie-value-unit"
@@ -384,7 +384,7 @@ exports[`Test Starship 1`] = `
         <h2
           className="link-object-title"
         >
-          Pilots
+          pilots
         </h2>
          
         <ul

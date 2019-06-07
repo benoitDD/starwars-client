@@ -8,6 +8,7 @@ import updateActive from '../../hoc/updateActive'
 import componentPrivate from '../../hoc/componentPrivate'
 import HandleError from './handleError'
 import {compose} from '../../utils'
+import {withTranslation} from 'react-i18next'
 
 class AddImageForm extends Component {
 	constructor(props){
@@ -45,11 +46,11 @@ class AddImageForm extends Component {
 		}
 		const {title} = this.state
 		if(!title || !title.trim().length){
-			error.errorTitle = 'Un titre doit être renseigné'
+			error.errorTitle = 'title.must.be.fill'
 		}
 		if(!this.file.current.files[0] 
 			|| !['png', 'jpg', 'jpeg'].includes(mime.extension(this.file.current.files[0].type))){
-			error.errorFile = 'Une image d\'extension (png, jpg, jpeg) doit être renseignée'
+			error.errorFile = 'image.must.be.valid'
 		}
 		this.setState(error)
 		return Object.keys(error).reduce((valid, key) => valid && !error[key], true)
@@ -71,7 +72,7 @@ class AddImageForm extends Component {
 	}
 
 	successAddImage(){
-		return this.props.response && this.props.response.success && 'Image ajouté'
+		return this.props.response && this.props.response.success && this.props.t('image.added')
 	}
 
 	render(){
@@ -80,16 +81,17 @@ class AddImageForm extends Component {
 				<div className = 'add-image-form-items'>
 					<div className = 'add-image-form-item'>
 						<div className = 'add-image-form-item-inputs'>
-							<label htmlFor = 'title'>Title</label>
+							<label htmlFor = 'title'>{this.props.t('title')}</label>
 							<input id = 'title' type = 'text' name = 'title' value = {this.state.title} onChange = {this.changeValueInput}/>
 						</div>
 						<div className = 'add-image-form-error'>
-							{this.state.errorTitle || this.errorServerKey('title')}
+							{(this.state.errorTitle && this.props.t(this.state.errorTitle)) 
+								|| this.errorServerKey('title')}
 						</div>
 					</div>
 					<div className = 'add-image-form-item'>
 						<div className = 'add-image-form-item-inputs'>
-							<label htmlFor = 'description'>Description</label>
+							<label htmlFor = 'description'>{this.props.t('description')}</label>
 							<input id = 'description' type = 'text' name = 'description' value = {this.state.description} onChange = {this.changeValueInput}/>
 						</div>
 						<div className = 'add-image-form-error'>
@@ -98,14 +100,15 @@ class AddImageForm extends Component {
 					</div>
 					<div className = 'add-image-form-item'>
 						<div className = 'add-image-form-item-inputs'>
-							<label htmlFor = 'image'>Image</label>
+							<label htmlFor = 'image'>{this.props.t('image')}</label>
 							<input id = 'image' type = 'file' ref = {this.file} accept="image/png, image/jpeg, image/jpg" />
 						</div>
 						<div className = 'add-image-form-error'>
-							{this.state.errorFile || this.errorServerKey('image')}
+							{(this.state.errorFile && this.props.t(this.state.errorFile))
+								|| this.errorServerKey('image')}
 						</div>
 					</div>
-					<button type = 'submit' onClick = {this.addImage}>Ajouter</button>
+					<button type = 'submit' onClick = {this.addImage}>{this.props.t('add')}</button>
 				</div>
 				<div>
 					{this.errorServer() || this.successAddImage()
@@ -119,8 +122,11 @@ class AddImageForm extends Component {
 AddImageForm.propTypes = {
 	addImage: PropTypes.func.isRequired,
 	response: PropTypes.object,
-	error: PropTypes.object
+	error: PropTypes.object,
+	t: PropTypes.func.isRequired
 }
+
+const AddImageFormTranslate = withTranslation()(AddImageForm)
 
 function AddImageHeader(props){
 	return (
@@ -135,7 +141,7 @@ function AddImageHeader(props){
 						}
 					}})
 				}
-				return <AddImageForm addImage={addImage} response = {data && data.addImageHeader} error = {error} />
+				return <AddImageFormTranslate addImage={addImage} response = {data && data.addImageHeader} error = {error} />
 			}}
 		</Mutation>
 	)
