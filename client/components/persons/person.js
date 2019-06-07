@@ -16,33 +16,33 @@ import HandleError from '../utils/handleError'
 function getProperties(person){
 	return [
 		{
-			label: 'Birth year',
+			label: 'birth.year',
 			value: person.birthYear
 		},
 		{
-			label: 'Eye color',
+			label: 'eye.color',
 			value: person.eyeColor
 		},
 		{
-			label: 'Gender',
+			label: 'gender',
 			value: person.gender
 		},
 		{
-			label: 'Hair color',
+			label: 'hair.color',
 			value: person.hairColor
 		},
 		{
-			label: 'Height',
+			label: 'height',
 			value: person.height,
 			unit: 'cm'
 		},
 		{
-			label: 'Mass',
+			label: 'mass',
 			value: person.mass,
 			unit: 'kg'
 		},
 		{
-			label: 'Skin color',
+			label: 'skin.color',
 			value: person.skinColor
 		}
 	]

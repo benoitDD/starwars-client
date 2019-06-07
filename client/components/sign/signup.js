@@ -6,6 +6,7 @@ import './signup.sass'
 import {Mutation} from 'react-apollo'
 import HandleError from '../utils/handleError'
 import Loading from '../utils/loading'
+import {withTranslation} from 'react-i18next'
 
 class SignUpForm extends Component {
 
@@ -34,22 +35,24 @@ class SignUpForm extends Component {
 	render(){
 		return (
 			<div id = 'signup'>
-				<h1>Enregistrement</h1>
+				<h1>{this.props.t('sign.up')}</h1>
 				<form id = 'signup-form'>
 					<div className = 'signup-input-item'>
-						<label htmlFor = 'signup-login'>Login</label>
+						<label htmlFor = 'signup-login'>{this.props.t('login')}</label>
 						<input id = 'signup-login' type = 'text' value = {this.state.login} 
-							placeholder = 'Your login'
+							placeholder = {this.props.t('your.login')}
 							name = 'login' onChange = {e => this.onChangeValue(e)} />
 					</div>
 					<div className = 'signup-input-item'>
-						<label htmlFor = 'signup-password'>Password</label>
+						<label htmlFor = 'signup-password'>{this.props.t('password')}</label>
 						<input id = 'signup-password' type = 'password' value = {this.state.password} 
-							placeholder = 'Your password'
+							placeholder = {this.props.t('your.password')}
 							name = 'password' onChange = {e => this.onChangeValue(e)} />
 					</div>
 					<div id = 'signup-button'>
-						<button type = 'submit' onClick = {(e) => this.signUp(e)}>Se connecter</button>
+						<button type = 'submit' onClick = {(e) => this.signUp(e)}>
+							{this.props.t('sign.up')}
+						</button>
 					</div>
 					{
 						this.props.loading  && (
@@ -82,8 +85,11 @@ SignUpForm.propTypes = {
 	signUp: PropTypes.func.isRequired,
 	response: PropTypes.object,
 	errorServer: PropTypes.object,
-	loading: PropTypes.bool
+	loading: PropTypes.bool,
+	t: PropTypes.func.isRequired
 }
+
+const SignUpFormTranslate = withTranslation()(SignUpForm)
 
 class SignUp extends Component {
 	render(){
@@ -91,12 +97,13 @@ class SignUp extends Component {
 			<Mutation mutation = {SignUpQuery} onCompleted = {
 				data => {
 					if(data.signUp.success){
-						navigate('/sign-in', {state: {message: 'Sign-up success, now sign-in !'}})
+						navigate('/sign-in', {state: {message: 'sign.up.succes', i18n: true}})
 					}
 				}
 			} >
 				{(signUp, {data, error, loading}) => {
-					return <SignUpForm signUp = {signUp} response = {data} errorServer = {error} loading = {loading} />
+					return <SignUpFormTranslate signUp = {signUp} response = {data} 
+						errorServer = {error} loading = {loading} />
 				}}
 			</Mutation>
 		)

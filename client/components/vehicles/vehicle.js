@@ -13,51 +13,51 @@ import HandleError from '../utils/handleError'
 function getProperties(vehicle){
 	return [
 		{
-			label: 'Model',
+			label: 'model',
 			value: vehicle.model
 		},
 		{
-			label: 'Vehicle class',
+			label: 'vehicle.class',
 			value: vehicle.vehicleClass
 		},
 		{
-			label: 'Manufacturers',
+			label: 'manufacturers',
 			value: vehicle.manufacturers
 		},
 		{
-			label: 'Cost in credits',
+			label: 'cost.in.credits',
 			value: vehicle.costInCredits,
 			unit: 'credits'
 		},
 		{
-			label: 'Length',
+			label: 'length',
 			value: vehicle.length,
 			unit: 'm'
 		},
 		{
-			label: 'Crew',
+			label: 'crew',
 			value: vehicle.crew,
-			helper: 'The number of personnel needed to run or pilot this starship'
+			helper: 'crew.helper'
 		},
 		{
-			label: 'Passengers',
+			label: 'passengers',
 			value: vehicle.passengers,
-			helper: 'The number of non-essentiel people this starship can transport'
+			helper: 'passengers.helper'
 		},
 		{
-			label: 'Max atmosphering speed',
+			label: 'max.atmosphering.speed',
 			value: vehicle.maxAtmospheringSpeed,
-			helper: 'The maximum speed of this starship in atmosphere'
+			helper: 'max.atmosphering.speed.helper'
 		},
 		{
-			label: 'Cargo capacity',
+			label: 'cargo.capacity',
 			value: vehicle.cargoCapacity,
 			unit: 'kg'
 		},
 		{
-			label: 'Consumables',
+			label: 'consumables',
 			value: vehicle.consumables,
-			helper: 'The maximum length of time that this starship can provide consumables for its entire crew without having to resupply'
+			helper: 'consumables.helper'
 		}
 	]
 }

@@ -9,6 +9,7 @@ import './signin.sass'
 import HandleError from '../utils/handleError'
 import Loading from '../utils/loading'
 import {TOKEN_AUTHENTICATION} from '../../utils'
+import {withTranslation} from 'react-i18next'
 
 class SignIn extends Component {
 
@@ -58,30 +59,37 @@ class SignIn extends Component {
 	render(){
 		return (
 			<div id = 'signin'>
-				<h1>Connexion</h1>
+				<h1>{this.props.t('connexion')}</h1>
 				{
 					this.props.location && this.props.location.state && this.props.location.state.message
 						&& (
-							<p id = 'signin-message-outside'>{
-								this.props.location.state.message}
+							<p id = 'signin-message-outside'>
+								{
+									this.props.location.state.i18n ?
+										this.props.t(this.props.location.state.message)
+										:
+										this.props.location.state.message
+								}
 							</p>
 						)
 				}
 				<form id = 'signin-form'>
 					<div className = 'signin-input-item'>
-						<label htmlFor = 'signin-login'>Login</label>
+						<label htmlFor = 'signin-login'>{this.props.t('login')}</label>
 						<input id = 'signin-login' type = 'text' value = {this.state.login} 
-							placeholder = 'Your login'
+							placeholder = {this.props.t('your.login')}
 							name = 'login' onChange = {e => this.onChangeValue(e)} />
 					</div>
 					<div className = 'signin-input-item'>
-						<label htmlFor = 'signin-password'>Password</label>
+						<label htmlFor = 'signin-password'>{this.props.t('password')}</label>
 						<input id = 'signin-password' type = 'password' value = {this.state.password} 
-							placeholder = 'Your password'
+							placeholder = {this.props.t('your.password')}
 							name = 'password' onChange = {e => this.onChangeValue(e)} />
 					</div>
 					<div id = 'signin-button'>
-						<button type = 'submit' onClick = {(e) => this.signIn(e)}>Se connecter</button>
+						<button type = 'submit' onClick = {(e) => this.signIn(e)}>
+							{this.props.t('sign.in')}
+						</button>
 					</div>
 					{
 						this.state.loading  && (
@@ -113,7 +121,8 @@ class SignIn extends Component {
 SignIn.propTypes = {
 	client: PropTypes.object.isRequired,
 	context: PropTypes.object.isRequired,
-	location: PropTypes.object
+	location: PropTypes.object,
+	t: PropTypes.func.isRequired
 }
 
-export default compose(withContext, withApollo)(SignIn)
+export default compose(withContext, withApollo, withTranslation())(SignIn)

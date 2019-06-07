@@ -13,39 +13,39 @@ import HandleError from '../utils/handleError'
 function getProperties(planet){
 	return [
 		{
-			label: 'Diameter',
+			label: 'diameter',
 			value: planet.diameter,
 			unit: 'km'
 		},
 		{
-			label: 'Rotation period',
+			label: 'rotation.period',
 			value: planet.rotationPeriod,
 			unit: 'h'
 		},
 		{
-			label: 'Orbital period',
+			label: 'orbital.period',
 			value: planet.orbitalPeriod,
 			unit: 'd'
 		},
 		{
-			label: 'Gravity',
+			label: 'gravity',
 			value: planet.gravity
 		},
 		{
-			label: 'Population',
+			label: 'population',
 			value: planet.population,
-			helper: 'The average population of sentient beings inhabiting this planet'
+			helper: 'average.population.helper'
 		},
 		{
-			label: 'Climates',
+			label: 'climates',
 			value: planet.climates
 		},
 		{
-			label: 'Terrains',
+			label: 'terrains',
 			value: planet.terrains
 		},
 		{
-			label: 'Surface water',
+			label: 'surface.water',
 			value: planet.surfaceWater,
 			unit: '%'
 		}

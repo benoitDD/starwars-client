@@ -13,61 +13,61 @@ import HandleError from '../utils/handleError'
 function getProperties(starship){
 	return [
 		{
-			label: 'Model',
+			label: 'model',
 			value: starship.model
 		},
 		{
-			label: 'Starship class',
+			label: 'starship.class',
 			value: starship.starshipClass
 		},
 		{
-			label: 'Manufacturers',
+			label: 'manufacturers',
 			value: starship.manufacturers
 		},
 		{
-			label: 'Cost in credits',
+			label: 'cost.in.credits',
 			value: starship.costInCredits,
 			unit: 'credits'
 		},
 		{
-			label: 'Length',
+			label: 'length',
 			value: starship.length,
 			unit: 'm'
 		},
 		{
-			label: 'Crew',
+			label: 'crew',
 			value: starship.crew,
-			helper: 'The number of personnel needed to run or pilot this starship'
+			helper: 'crew.helper'
 		},
 		{
-			label: 'Passengers',
+			label: 'passengers',
 			value: starship.passengers,
-			helper: 'The number of non-essentiel people this starship can transport'
+			helper: 'passengers.helper'
 		},
 		{
-			label: 'Max atmosphering speed',
+			label: 'max.atmosphering.speed',
 			value: starship.maxAtmospheringSpeed,
-			helper: 'The maximum speed of this starship in atmosphere'
+			helper: 'max.atmosphering.speed.helper'
 		},
 		{
-			label: 'Hyperdrive rating',
+			label: 'hyperdrive.rating',
 			value: starship.hyperdriveRating,
-			helper: 'The class of this starships hyperdrive'
+			helper: 'hyperdrive.rating.helper'
 		},
 		{
-			label: 'MGLT',
+			label: 'mglt',
 			value: starship.MGLT,
-			helper: 'The Maximum number of Megalights this starship can travel in a standard hour'
+			helper: 'mglt.helper'
 		},
 		{
-			label: 'cargo capacity',
+			label: 'cargo.capacity',
 			value: starship.cargoCapacity,
 			unit: 'kg'
 		},
 		{
-			label: 'Consumables',
+			label: 'consumables',
 			value: starship.consumables,
-			helper: 'The maximum length of time that this starship can provide consumables for its entire crew without having to resupply'
+			helper: 'consumables.helper'
 		}
 	]
 }

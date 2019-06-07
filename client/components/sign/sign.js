@@ -5,8 +5,10 @@ import NavItem from '../utils/navItem'
 import './sign.sass'
 import {navigate} from '@reach/router'
 import {TOKEN_AUTHENTICATION} from '../../utils'
+import {withTranslation} from 'react-i18next'
+import {compose} from '../../utils'
 
-function Sign({context}){
+function Sign({context, t}){
 	return (
 		<div id = 'sign'>
 			{
@@ -17,12 +19,12 @@ function Sign({context}){
 							localStorage.removeItem(TOKEN_AUTHENTICATION)
 							navigate('/')
 						}}>
-							Sign out
+						{t('sign.out')}
 					</button>
 					:
 					<Fragment>
-						<NavItem to = '/sign-in'>Sign in</NavItem>
-						<NavItem to = '/sign-up'>Sign up</NavItem>
+						<NavItem to = '/sign-in'>{t('sign.in')}</NavItem>
+						<NavItem to = '/sign-up'>{t('sign.up')}</NavItem>
 					</Fragment>
 			}
 		</div>
@@ -30,7 +32,8 @@ function Sign({context}){
 }
 
 Sign.propTypes = {
-	context: PropTypes.object
+	context: PropTypes.object,
+	t: PropTypes.func.isRequired
 }
 
-export default withContext(Sign)
+export default compose(withContext, withTranslation())(Sign)

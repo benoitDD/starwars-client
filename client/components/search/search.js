@@ -6,6 +6,8 @@ import {LinkPerson, LinkPlanet, LinkSpecie, LinkStarship, LinkVehicle} from '../
 import './search.sass'
 import Loading from '../utils/loading'
 import HandleError from '../utils/handleError'
+import {withTranslation} from 'react-i18next'
+import {compose} from '../../utils'
 
 class Search extends Component{
 	constructor(props){
@@ -67,7 +69,7 @@ class Search extends Component{
 							</ul>
 						)
 						:
-						'Any matching'
+						this.props.t('any.matching')
 				}
 			</div>
 		)
@@ -78,7 +80,7 @@ class Search extends Component{
 		if(!results){
 			return
 		}else if(!results.length){
-			return 'Any results'
+			return this.props.t('any.results')
 		}
 		const resultsGroupBy = this.groupByResults(results)
 		return [].concat(
@@ -95,7 +97,9 @@ class Search extends Component{
 			<section className = 'search'>
 				<form className = 'search-form'>
 					<input type = 'text' value = {this.text} onChange = {e => this.setState({text: e.target.value})} />
-					<button type = 'submit' onClick = {this.seek}>Seek</button>
+					<button type = 'submit' onClick = {this.seek}>
+						{this.props.t('seek')}
+					</button>
 				</form>
 				<div className = 'search-results'>
 					{
@@ -117,6 +121,7 @@ class Search extends Component{
 
 Search.propTypes = {
 	client: PropTypes.object,
+	t: PropTypes.func.isRequired
 }
 
-export default withApollo(Search)
+export default compose(withApollo, withTranslation())(Search)

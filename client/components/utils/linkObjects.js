@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {LinkPlanet, LinkSpecie, LinkStarship, LinkVehicle, LinkPerson} from './links'
 import './linkObjects.sass'
+import {withTranslation} from 'react-i18next'
 
 function LinkObjectItemImage({more}){
 	if(!more || !more.imagesHeader || !more.imagesHeader.length){
@@ -36,11 +37,11 @@ LinkObjectItem.propTypes = {
 	Link: PropTypes.func
 }
 
-function LinkObject({title, object, Link}){
+function LinkObject({title, object, Link, t}){
 	const notDefine = <span className = 'link-object-not-define'>Not define</span>
 	return (
 		<div className = 'link-object'>
-			<h2 className = 'link-object-title'>{title}</h2> {object ? 
+			<h2 className = 'link-object-title'>{t(title)}</h2> {object ? 
 				Array.isArray(object) ?
 					object.length ?
 						<ul className = 'link-object-list'>
@@ -61,42 +62,46 @@ function LinkObject({title, object, Link}){
 		</div>
 	)
 }
+
+const LinkObjectTranslate = withTranslation()(LinkObject)
+
 LinkObject.propTypes = {
 	title: PropTypes.string.isRequired,
 	object: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-	Link: PropTypes.func
+	Link: PropTypes.func,
+	t: PropTypes.func.isRequired
 }
 
 function Homeworld({homeworld}){
-	return <LinkObject title = 'Homeworld' object = {homeworld} Link = {LinkPlanet} />
+	return <LinkObjectTranslate title = 'homeworld' object = {homeworld} Link = {LinkPlanet} />
 }
 Homeworld.propTypes = {
 	homeworld: PropTypes.object,
 }
 
 function Specie({specie}){
-	return <LinkObject title = 'Specie' object = {specie} Link = {LinkSpecie} />
+	return <LinkObjectTranslate title = 'specie' object = {specie} Link = {LinkSpecie} />
 }
 Specie.propTypes = {
 	specie: PropTypes.object,
 }
 
 function Starships({starships}){
-	return <LinkObject title = 'Starships' object = {starships} Link = {LinkStarship} />
+	return <LinkObjectTranslate title = 'starships' object = {starships} Link = {LinkStarship} />
 }
 Starships.propTypes = {
 	starships: PropTypes.array,
 }
 
 function Vehicles({vehicles}){
-	return <LinkObject title = 'Vehicles' object = {vehicles} Link = {LinkVehicle} />
+	return <LinkObjectTranslate title = 'vehicles' object = {vehicles} Link = {LinkVehicle} />
 }
 Vehicles.propTypes = {
 	vehicles: PropTypes.array,
 }
 
-function Persons({persons, title = 'Persons'}){
-	return <LinkObject title = {title} object = {persons} Link = {LinkPerson} />
+function Persons({persons, title = 'persons'}){
+	return <LinkObjectTranslate title = {title} object = {persons} Link = {LinkPerson} />
 }
 Persons.propTypes = {
 	persons: PropTypes.array,
@@ -104,14 +109,14 @@ Persons.propTypes = {
 }
 
 function Pilots({pilots}){
-	return <Persons title = 'Pilots' persons = {pilots}/>
+	return <Persons title = 'pilots' persons = {pilots}/>
 }
 Pilots.propTypes = {
 	pilots: PropTypes.array,
 }
 
 function Residents({residents}){
-	return <Persons title = 'Residents' persons = {residents}/>
+	return <Persons title = 'residents' persons = {residents}/>
 }
 Residents.propTypes = {
 	residents: PropTypes.array,

@@ -18,13 +18,13 @@ exports[`Test starhips 1`] = `
         disabled={false}
         onClick={[Function]}
       >
-        Précedent
+        previous
       </button>
       <button
         disabled={false}
         onClick={[Function]}
       >
-        Suivant
+        next
       </button>
     </span>
   </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './properties.sass'
+import {withTranslation} from 'react-i18next'
 
 function getValue(value, unknow){
 	if(!value){
@@ -14,7 +15,7 @@ function getValue(value, unknow){
 			<ul className = 'propertie-value-array'>
 				{
 					value.map((v, index) => (
-						<li key = {index} className = 'propertie-value-array-item'>
+						<li key = {index} className = {`propertie-value-array-item ${index % 2 == 0 ? 'peer' : 'odd' }`}>
 							{
 								getValue(v, unknow)
 							}
@@ -32,15 +33,16 @@ function getUnit(unit){
 	return unit ? <div className = 'properties-unit'>{unit}</div> : ''
 }
 
-function Properties({properties}){
+function Properties({properties, t}){
 	return (
 		<div className = 'properties'>
 			<h2 className = 'properties-title'>Properties</h2>
 			<ul className = 'properties-attributes'>
 				{
 					properties.map((property, index) => (
-						<li key = {index} title = {property.helper} className = {property.helper ? 'helper' : ''}>
-							<div className = 'propertie-label'>{property.label}</div>
+						<li key = {index} title = {t(property.helper)} 
+							className = {`${index % 2 == 0 ? 'peer' : 'odd'}${property.helper ? ' helper' : ''}`}>
+							<div className = 'propertie-label'>{t(property.label)}</div>
 							<div className = 'propertie-value-unit'>
 								<div className = 'propertie-value'>
 									{getValue(property.value, 'not define')}
@@ -63,7 +65,8 @@ Properties.propTypes = {
 			PropTypes.arrayOf(PropTypes.number)]),
 		unit: PropTypes.string,
 		helper: PropTypes.string
-	})).isRequired
+	})).isRequired,
+	t: PropTypes.func.isRequired
 }
 
-export default Properties
+export default withTranslation()(Properties)
