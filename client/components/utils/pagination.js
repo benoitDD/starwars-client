@@ -67,7 +67,7 @@ class Pagination extends Component {
 						return (
 							<div className = 'pagination'>
 								<div className = 'pagination-header'>
-									<span>{pageInfo.totalCount} élément(s)</span>
+									<span>{pageInfo.totalCount} {this.props.t('item.s')}</span>
 									<span className = 'pagination-actions'>
 										{this.previousButton(data, fetchMore)}
 										{this.nextButton(data, fetchMore)}

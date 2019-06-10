@@ -36,7 +36,7 @@ function getUnit(unit){
 function Properties({properties, t}){
 	return (
 		<div className = 'properties'>
-			<h2 className = 'properties-title'>Properties</h2>
+			<h2 className = 'properties-title'>{t('properties')}</h2>
 			<ul className = 'properties-attributes'>
 				{
 					properties.map((property, index) => (

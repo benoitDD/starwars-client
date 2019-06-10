@@ -72,5 +72,7 @@
     "cargo.capacity": "Capacité du chargement",
     "consumables": "Consommables",
     "consumables.helper": "Le temps maximum que ce vaisseau peut fournir des consommables pour tous l'équipage sans réapprovisionnement",
-    "vehicle.class": "Classe du véhicule"
+    "vehicle.class": "Classe du véhicule",
+    "properties": "Propriétés",
+    "item.s": "Élément(s)"
 }

@@ -72,5 +72,7 @@
     "cargo.capacity": "Capacidad de carga",
     "consumables": "Consumibles",
     "consumables.helper": "La cantidad máxima de tiempo que esta nave puede proporcionar consumibles para toda su tripulación sin tener que reabastecerse.",
-    "vehicle.class": "Clase de vehiculo"
+    "vehicle.class": "Clase de vehiculo",
+    "properties": "Propiedades",
+    "item.s": "Artículo(s)"
 }

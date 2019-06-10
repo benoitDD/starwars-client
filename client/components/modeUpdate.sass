@@ -1,7 +1,8 @@
-@import '../scss/properties.scss'
+@import '../scss/properties', '../scss/utils'
 
 #mode-update
     position: fixed
+    @include headerNavHeight(top)
     right: 10px
     background-color: $secondary_color
     border: 0px

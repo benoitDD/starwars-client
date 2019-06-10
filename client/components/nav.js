@@ -1,23 +1,52 @@
-import React from 'react'
+import React, {Component} from 'react'
 import './nav.sass'
 import NavItem from './utils/navItem'
 import {withTranslation} from 'react-i18next'
 import PropTypes from 'prop-types'
+import withSizes from 'react-sizes'
+import {compose} from '../utils'
+import Dropdown from './utils/dropdown'
+import IconMenu from './utils/iconMenu'
 
-function Nav({t}){
-	return(
-		<nav className = 'nav'>
-			<NavItem to = '/starships/'>{t('starships')}</NavItem>
-			<NavItem to = '/persons/'>{t('persons')}</NavItem>
-			<NavItem to = '/planets/'>{t('planets')}</NavItem>
-			<NavItem to = '/species/'>{t('species')}</NavItem>
-			<NavItem to = '/vehicles/'>{t('vehicles')}</NavItem>
-		</nav>
-	)
+class Nav extends Component {
+
+	items(){
+		return [
+			<NavItem key = 'starships' to = '/starships/'>{this.props.t('starships')}</NavItem>,
+			<NavItem key = 'persons' to = '/persons/'>{this.props.t('persons')}</NavItem>,
+			<NavItem key = 'planets' to = '/planets/'>{this.props.t('planets')}</NavItem>,
+			<NavItem key = 'species' to = '/species/'>{this.props.t('species')}</NavItem>,
+			<NavItem key = 'vehicles' to = '/vehicles/'>{this.props.t('vehicles')}</NavItem>
+		]
+	}
+
+	render(){
+		return (
+			<nav className = 'nav'>
+				{
+					this.props.isSmallScreen ?
+						<Dropdown data = {this.items()} 
+							renderData = {data => data}
+							header = {<IconMenu/>}
+							displayDataChoosed = {true}
+						/>
+						:
+						<div className = 'normal'>
+							{this.items()}
+						</div>
+				}
+			</nav>
+		) 
+	}
 }
 
 Nav.propTypes = {
-	t: PropTypes.func.isRequired
+	t: PropTypes.func.isRequired,
+	isSmallScreen: PropTypes.bool.isRequired
 }
 
-export default withTranslation()(Nav)
+const mapSizesToProps = ({ width }) => ({
+	isSmallScreen: width <= 700,
+})
+
+export default compose(withTranslation(), withSizes(mapSizesToProps))(Nav)

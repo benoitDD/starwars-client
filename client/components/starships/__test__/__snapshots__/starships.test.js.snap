@@ -9,7 +9,8 @@ exports[`Test starhips 1`] = `
   >
     <span>
       37
-       élément(s)
+       
+      item.s
     </span>
     <span
       className="pagination-actions"

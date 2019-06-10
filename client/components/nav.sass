@@ -1,9 +1,16 @@
-@import '../scss/properties.scss'
+@import '../scss/properties'
     
-$space_betwwen_item : 10px
+$space_betwwen_item : 5px
 
 .nav
     font-size: 1.1em
-    a
-        padding-left: $space_betwwen_item
-        padding-right: $space_betwwen_item
+    .dropdown
+        margin-left: $space_betwwen_item
+        .dropdown_body
+            position: absolute
+            background-color: $header_nav_background_color
+            z-index: 2000
+    .normal
+        a
+            padding-left: $space_betwwen_item
+            padding-right: $space_betwwen_item

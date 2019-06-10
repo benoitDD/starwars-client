@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import './dropdown.sass'
 import PropTypes from 'prop-types'
 
-class DropDown extends Component {
+class Dropdown extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
@@ -64,7 +64,7 @@ class DropDown extends Component {
 	}
 }
 
-DropDown.propTypes = {
+Dropdown.propTypes = {
 	data: PropTypes.array.isRequired,
 	renderData: PropTypes.func.isRequired,
 	renderHeader: PropTypes.func,
@@ -73,4 +73,4 @@ DropDown.propTypes = {
 	choose: PropTypes.object
 }
 
-export default DropDown
+export default Dropdown

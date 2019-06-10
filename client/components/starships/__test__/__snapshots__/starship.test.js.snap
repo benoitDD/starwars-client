@@ -117,7 +117,7 @@ exports[`Test Starship 1`] = `
         <h2
           className="properties-title"
         >
-          Properties
+          properties
         </h2>
         <ul
           className="properties-attributes"

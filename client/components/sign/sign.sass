@@ -1,12 +1,11 @@
-@import '../../scss/properties.scss'
+@import '../../scss/properties', '../../scss/media'
 
 $space_betwwen_item: 10px
 
 #sign
-    margin-right: 10px
     a
-        padding-left: $space_betwwen_item
-        padding-right: $space_betwwen_item
+        margin-left: $space_betwwen_item
+        margin-right: $space_betwwen_item
     #sign-signout
         background-color: $secondary_color
         color: $main_color
@@ -14,3 +13,18 @@ $space_betwwen_item: 10px
         border-radius: 5px
         height: 20px
         cursor: pointer
+    @include tablet(true)
+        #nav-sign-in
+                background: url('../../images/sign-in.png') no-repeat
+                background-size: 30px 30px
+                display: inline-block
+                width: 30px
+                height: 30px
+                text-indent: -9999px
+        #nav-sign-up
+                background: url('../../images/sign-up.png') no-repeat
+                background-size: 30px 30px
+                display: inline-block
+                width: 30px
+                height: 30px
+                text-indent: -9999px

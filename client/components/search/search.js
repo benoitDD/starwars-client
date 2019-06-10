@@ -7,7 +7,7 @@ import './search.sass'
 import Loading from '../utils/loading'
 import HandleError from '../utils/handleError'
 import {withTranslation} from 'react-i18next'
-import {compose} from '../../utils'
+import {compose, withProviderPart1} from '../../utils'
 
 class Search extends Component{
 	constructor(props){
@@ -60,7 +60,9 @@ class Search extends Component{
 								{
 									objects.map(object => (
 										<li key = {object.id}>
-											<Link id = {object.id}>
+											<Link onClick = {() => {
+												this.props.displayPart1Small && this.props.tooglePart1Small()
+											}} id = {object.id}>
 												{object.name}
 											</Link>
 										</li>
@@ -121,7 +123,9 @@ class Search extends Component{
 
 Search.propTypes = {
 	client: PropTypes.object,
-	t: PropTypes.func.isRequired
+	t: PropTypes.func.isRequired,
+	displayPart1Small: PropTypes.bool.isRequired,
+	tooglePart1Small: PropTypes.func.isRequired
 }
 
-export default compose(withApollo, withTranslation())(Search)
+export default compose(withApollo, withTranslation(), withProviderPart1)(Search)
