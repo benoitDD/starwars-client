@@ -74,5 +74,6 @@
     "consumables.helper": "The maximum length of time that this starship can provide consumables for its entire crew without having to resupply",
     "vehicle.class": "Vehicle class",
     "properties": "Properties",
-    "item.s": "Item(s)"
+    "item.s": "Item(s)",
+    "session.expired.reconnect": "Session expired, you must reconect"
 }
