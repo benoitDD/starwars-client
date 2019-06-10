@@ -1,0 +1,13 @@
+@import './properties', './media';
+
+@mixin headerNavHeight($property:height, $add: 0px) {
+    @include desktop {
+        #{$property}: $header_nav_height + $add;
+    }
+    @include tablet {
+        #{$property}: $header_nav_height_tablet + $add;
+    }
+    @include phone {
+        #{$property}: $header_nav_height_tablet + $add;
+    }
+}

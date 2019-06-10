@@ -1,0 +1,27 @@
+@import './properties';
+
+@mixin desktop {
+    @media (min-width: $desktop_min_with) {
+        @content;
+    }
+}
+
+@mixin tablet($inferior: false, $superior: false) {
+    $_tablet_min_with: $tablet_min_with;
+    @if ($inferior){
+        $_tablet_min_with: 0px
+    }
+    $_desktop_min_with: $desktop_min_with;
+    @if ($superior){
+        $_desktop_min_with: 10000px
+    }
+    @media (min-width: $_tablet_min_with) and (max-width: $_desktop_min_with - 1) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (max-width: $phone_max_with) {
+        @content;
+    }
+}

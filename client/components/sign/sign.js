@@ -23,8 +23,8 @@ function Sign({context, t}){
 					</button>
 					:
 					<Fragment>
-						<NavItem to = '/sign-in'>{t('sign.in')}</NavItem>
-						<NavItem to = '/sign-up'>{t('sign.up')}</NavItem>
+						<NavItem id = 'nav-sign-in' to = '/sign-in'>{t('sign.in')}</NavItem>
+						<NavItem id = 'nav-sign-up' to = '/sign-up'>{t('sign.up')}</NavItem>
 					</Fragment>
 			}
 		</div>

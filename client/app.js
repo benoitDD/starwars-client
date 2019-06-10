@@ -4,8 +4,48 @@ import Sections from './components/sections'
 import './scss/app.sass'
 import Search from './components/search/search'
 import ModeUpdate from './components/modeUpdate'
+import withSizes from 'react-sizes'
+import PropTypes from 'prop-types'
+import {ProviderPart1} from './utils'
+import arrowLeft from './images/arrow-left.png'
+import arrowRight from './images/arrow-right.png'
 
 class App extends Component {
+
+	constructor(props){
+		super(props)
+		this.state = {
+			displayPart1Small: false
+		}
+	}
+
+	handleSmallScrenPart1(){
+		return (
+			<Fragment>
+				<img onClick = {this.tooglePart1Small} 
+					className = 'toogle-part1' alt = 'arrow' 
+					src = {this.state.displayPart1Small ? arrowLeft : arrowRight} />
+
+				{
+					this.state.displayPart1Small &&
+						this.part1()
+				}
+			</Fragment>
+		)
+			
+	}
+
+	part1(){
+		return (
+			<div className = 'part1'>
+				<Search/>
+			</div>
+		)
+	}
+
+	tooglePart1Small = () =>{
+		this.setState(state => ({displayPart1Small: !state.displayPart1Small}))
+	}
 
 	render(){
 		return (
@@ -13,9 +53,17 @@ class App extends Component {
 				<Header/>
 				<div className = 'main'>
 					<ModeUpdate/>
-					<div className = 'part1'>
-						<Search/>
-					</div>
+					<ProviderPart1.Provider value = {{
+						displayPart1Small: this.props.isSmallScreen && this.state.displayPart1Small,
+						tooglePart1Small: this.tooglePart1Small
+					}}>
+						{
+							this.props.isSmallScreen ?
+								this.handleSmallScrenPart1()
+								:
+								this.part1()
+						}
+					</ProviderPart1.Provider>
 					<div className = 'part2'>
 						<Sections/>
 					</div>
@@ -25,4 +73,12 @@ class App extends Component {
 	}
 }
 
-export default App
+App.propTypes = {
+	isSmallScreen: PropTypes.bool.isRequired
+}
+
+const mapSizesToProps = ({ width }) => ({
+	isSmallScreen: width < 700,
+})
+
+export default withSizes(mapSizesToProps)(App)

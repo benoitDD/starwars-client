@@ -1,0 +1,18 @@
+$main_color: white;
+$main_color_contrast: black;
+$secondary_color: rgb(238, 159, 12);
+
+$header_nav_height: 50px;
+$header_nav_height_tablet: $header_nav_height * 2;
+$header_nav_background_color: rgba(58, 52, 52, 0.8);
+
+$main_margin_top: 35px;
+
+$desktop_min_with: 1201px;
+$tablet_min_with: 700px;
+$phone_max_with: 699px;
+
+$part1_height: calc(80vh - 4rem);
+$part1_height_search: calc(80vh - 8rem);
+
+$min_width_app: 250px

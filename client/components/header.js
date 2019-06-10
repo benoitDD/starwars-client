@@ -7,7 +7,7 @@ import ChangeLanguage from './changeLanguage'
 function Header(){
 	return(
 		<header className = 'header'>
-			<span className = 'brand'>STARWARS UNIVERSE</span>
+			<span className = 'brand'><span>STARWARS UNIVERSE</span></span>
 			<Nav/>
 			<Sign/>	
 			<ChangeLanguage/>

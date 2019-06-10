@@ -1,17 +1,21 @@
-@import '../scss/properties.scss'
+@import '../scss/properties', '../scss/utils'
 
 
 .changeLanguage
     color: $main_color
     height: $header_nav_height
-    margin-right: 10px
-    width: 130px
+    @include desktop
+        min-width: 120px
     img
         max-height: $header_nav_height
     .changeLanguage_langage
         display: flex
         flex-direction: row
         align-items: center
+
+        .changeLanguage_label
+            @include tablet(true)
+                display: none
 
     .dropdown_body
         background-color: $header_nav_background_color

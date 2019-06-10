@@ -1,17 +1,25 @@
-@import '../../scss/properties.scss'
+@import '../../scss/properties', '../../scss/media'
 
 .add-image-form-items
     display: flex
-    flex-direction: row
+    @include tablet(true)
+        flex-direction: column
+    @include desktop
+        flex-direction: row
     .add-image-form-item
-        width: 350px
+        @include desktop
+            width: 350px
         .add-image-form-item-inputs
             height: 30px
             display: flex
             flex-direction: row
             margin-right: 10px
             label
-                margin-right: 10px
+                @include desktop
+                    margin-right: 10px
+                @include tablet(true)
+                    width: 150px
+                    display: inline-block
             input
                 width: 100%
         .add-image-form-error

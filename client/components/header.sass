@@ -1,6 +1,7 @@
-@import '../scss/properties.scss'
+@import '../scss/media', '../scss/utils', '../scss/properties'
 
 .header
+    min-width: $min_width_app
     position: fixed
     top: 0px
     width: 100%
@@ -8,14 +9,24 @@
     flex-direction: row
     justify-content: space-between
     align-items: center
+    flex-wrap: wrap
 
     z-index: 1000
 
     margin-left: -8px
     margin-right: -8px
 
-    height: $header_nav_height
+
+    @include headerNavHeight
     background-color: $header_nav_background_color
 
     .brand
         font-size: 1.3em
+        text-align: center
+        @include tablet(true)
+            width: 100%
+            height: $header_nav_height
+            display: flex
+            flex-direction: row
+            justify-content: center
+            align-items: center

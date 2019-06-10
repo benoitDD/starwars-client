@@ -72,5 +72,7 @@
     "cargo.capacity": "Cargo capacity",
     "consumables": "Consumables",
     "consumables.helper": "The maximum length of time that this starship can provide consumables for its entire crew without having to resupply",
-    "vehicle.class": "Vehicle class"
+    "vehicle.class": "Vehicle class",
+    "properties": "Properties",
+    "item.s": "Item(s)"
 }

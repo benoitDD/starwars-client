@@ -1,18 +1,27 @@
-@import '../../scss/properties.scss'
+@import '../../scss/properties', '../../scss/media'
+
+$input-border-radius: 8px
 
 .search
     .search-form
         display: flex
-        flex-direction: row
+        @include tablet(true)
+            flex-direction: column
+        @include desktop
+            flex-direction: row
         input
             width: 100%
             height: 25px
             border: 0px
             padding: 0px
-            padding-left: 10px
+            @include tablet(true)
+                border-radius: $input-border-radius $input-border-radius 0px 0px
         button
-            border-top-right-radius: 8px
-            border-bottom-right-radius: 8px
+            @include desktop
+                border-radius: 0px $input-border-radius $input-border-radius 0px
+            @include tablet(true)
+                width: 100%
+                border-radius: 0px 0px $input-border-radius $input-border-radius
             height: 25px
             border: 0px
             background-color: $secondary_color
@@ -22,7 +31,7 @@
         overflow-y: auto
         scrollbar-color: $secondary_color grey
         scrollbar-width: thin
-        height: calc(100vh - 8rem)
+        max-height: $part1_height_search
         .search-results-per-type
             position: relative
             .search-results-per-type-title
@@ -32,8 +41,11 @@
                 margin-top: 0px
                 margin-bottom: 10px
             .search-results-per-type-results
+                padding-left: 10px
                 li
                     list-style: none
         .search-results-loading
             text-align: center
             margin-top: 10px
+    @include phone
+        min-width: $min_width_app
