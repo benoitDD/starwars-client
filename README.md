@@ -5,7 +5,7 @@ Une application web qui consume l'api  [starwars-api
 
 ## Téléchargement
 
-`https://github.com/benoitDD/starwars-client.git`
+`git clone https://github.com/benoitDD/starwars-client.git`
 
 ## Installation
 
@@ -13,13 +13,17 @@ A l'intérieur du projet qu'on vient de télécharger :
 
 `npm install`
 
-Pour le serveur, il faut créer un fichier **.env** avec ces informations :
+Pour le **serveur**, il faut créer un fichier **.env** avec ces informations :
 
 ```
+#Le port sur lequel le serveur démarrera
 PORT=5000
+
+#Le chemin des fichiers i18n
+DIRECTORY_LOCALES_I18N=i18n/locales/{{lng}}/{{ns}}.json
 ```
 
-Pour le client, il faut créer un fichier **client/.env** avec ces informations :
+Pour le **client**, on peut modifier le fichier **client/.env** :
 
 ```
 #L'adresse de l'api
@@ -27,6 +31,9 @@ URI_API=http://localhost:9090/graphql
 
 #L'adresse où chercher les images
 URI_IMAGES=http://localhost:9090
+
+#Le chemin des fichiers i18n
+URI_I18N=/i18n/locales/{{lng}}/{{ns}}.json
 ```
 
 Ensuite on peut packager le client :
