@@ -64,6 +64,10 @@ module.exports = () => {
         },
         resolve: {
             symlinks: false
+        },
+        performance: {
+            maxEntrypointSize: 700000,
+            maxAssetSize: 700000
         }
     }
 }
