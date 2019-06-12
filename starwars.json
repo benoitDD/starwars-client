@@ -466,7 +466,23 @@
             },
             {
               "name": "reloadSignIn",
-              "description": "permet de se re-connecter en utilisant le token authentification dans le header",
+              "description": "Permet de se re-connecter en utilisant le token authentification dans le header",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ResponseSign",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "signOut",
+              "description": "Permet de se déconnecter (on met le token d'authentification en liste noire)",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -3550,7 +3566,7 @@
   "extensions": {
     "graphql-config": {
       "source": "http://192.168.1.69:9090/graphql",
-      "timestamp": "Tue Jun 04 2019 19:34:02 GMT+0200 (GMT+02:00)"
+      "timestamp": "Wed Jun 12 2019 15:36:47 GMT+0200 (GMT+02:00)"
     }
   }
 }

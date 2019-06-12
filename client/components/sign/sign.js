@@ -7,17 +7,35 @@ import {navigate} from '@reach/router'
 import {TOKEN_AUTHENTICATION} from '../../utils'
 import {withTranslation} from 'react-i18next'
 import {compose} from '../../utils'
+import {withApollo} from 'react-apollo'
+import {SignOut} from '../../query/sign.gql'
+import * as log from 'loglevel'
 
-function Sign({context, t}){
+var logging = log.noConflict()
+
+function Sign({context, t, client}){
 	return (
 		<div id = 'sign'>
 			{
 				context.user ?
 					<button id = 'sign-signout'
 						onClick = {() => {
-							context.setUser(null)
-							localStorage.removeItem(TOKEN_AUTHENTICATION)
-							navigate('/')
+							client.query({
+								query: SignOut,
+								fetchPolicy: 'network-only'
+							})
+								.then(response => {
+									if(response.data.signOut.success){
+										context.setUser(null)
+										localStorage.removeItem(TOKEN_AUTHENTICATION)
+										navigate('/')
+									}else{
+										logging.error('Error while signout !!')
+									}
+								})
+								.catch(error => {
+									navigate('/error', {state: {error: JSON.parse(JSON.stringify(error))}})
+								})
 						}}>
 						{t('sign.out')}
 					</button>
@@ -33,7 +51,8 @@ function Sign({context, t}){
 
 Sign.propTypes = {
 	context: PropTypes.object,
-	t: PropTypes.func.isRequired
+	t: PropTypes.func.isRequired,
+	client: PropTypes.object.isRequired,
 }
 
-export default compose(withContext, withTranslation())(Sign)
+export default compose(withContext, withTranslation(), withApollo)(Sign)
