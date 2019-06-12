@@ -38,3 +38,9 @@ mutation SignUp($login:String!, $password:String!){
         }
     }
 }
+
+query SignOut{
+    signOut {
+        success
+    }
+}
