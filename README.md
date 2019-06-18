@@ -42,7 +42,7 @@ Ensuite on peut packager le client :
 
 Compiler le serveur :
 
-`npm run compile`
+`npm run compile-prod`
 
 Lancer le serveur :
 
