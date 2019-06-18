@@ -1,0 +1,3 @@
+{
+  "ignore": ["server/dist", "server/public", "node_modules", "package*.json", "nodemon.json", "client"]
+}

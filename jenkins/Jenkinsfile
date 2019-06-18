@@ -51,7 +51,7 @@ pipeline {
         }
         stage('Build server') {
             steps {
-                sh 'npm run compile'
+                sh 'npm run compile-prod'
             }
         }
         stage('Deliver') {

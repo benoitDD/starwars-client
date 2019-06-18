@@ -24,7 +24,8 @@
     "react-apollo": "2.5.6",
     "react-dom": "16.8.6",
     "react-i18next": "10.11.0",
-    "react-sizes": "2.0.0"
+    "react-sizes": "2.0.0",
+    "webpack-node-externals": "1.7.2"
   },
   "devDependencies": {
     "@babel/cli": "7.4.4",
@@ -36,7 +37,7 @@
     "apollo-client": "2.6.0",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.6",
-    "clean-webpack-plugin": "2.0.2",
+    "clean-webpack-plugin": "3.0.0",
     "css-loader": "2.1.1",
     "eslint": "5.16.0",
     "eslint-plugin-graphql": "3.0.3",
@@ -59,13 +60,15 @@
     "webpack-merge": "4.2.1"
   },
   "scripts": {
-    "start-dev-debug": "set NODE_ENV=development && node --inspect -r dotenv/config server/lib",
-    "start-dev": "set NODE_ENV=development && node -r dotenv/config server/lib",
-    "start-prod": "set NODE_ENV=production && node -r dotenv/config server/lib",
-    "compile": "babel server/src --out-dir server/lib",
-    "watch": "nodemon --exec \"npm run compile && npm run start-dev\" ",
-    "build-dev": "webpack --config webpack/webpack.dev.js",
-    "build-prod": "webpack --config webpack/webpack.prod.js",
+    "start": "node server/dist",
+    "debug": "node --inspect server/dist",
+    "compile-prod": "webpack --config server/webpack/webpack.prod.js",
+    "compile-dev": "webpack --config server/webpack/webpack.dev.js",
+    "watch": "nodemon --config server/nodemon.json --exec \"npm run compile-dev && npm start\"",
+    "watch-prod": "nodemon --config server/nodemon.json --exec \"npm run compile-prod && npm start\"",
+    "watch-debug": "nodemon --config server/nodemon.json --exec \"npm run compile-dev && npm run debug\"",
+    "build-dev": "webpack --config client/webpack/webpack.dev.js",
+    "build-prod": "webpack --config client/webpack/webpack.prod.js",
     "linter": "eslint client",
     "linter-query": "eslint client/query --ext .gql",
     "get-schema": "graphql get-schema",
