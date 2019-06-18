@@ -1,4 +1,4 @@
 node_modules
 server/lib
 server/public
-/.env
+server/.env

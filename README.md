@@ -13,7 +13,7 @@ A l'intérieur du projet qu'on vient de télécharger :
 
 `npm install`
 
-Pour le **serveur**, il faut créer un fichier **.env** avec ces informations :
+Pour le **serveur**, il faut créer un fichier **server/.env** avec ces informations :
 
 ```
 #Le port sur lequel le serveur démarrera
