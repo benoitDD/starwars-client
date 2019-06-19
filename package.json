@@ -73,7 +73,8 @@
     "linter-query": "eslint client/query --ext .gql",
     "get-schema": "graphql get-schema",
     "test": "jest",
-    "fragments": "babel-node -r node_modules/dotenv/config client/fetchFragmentsTypes.js dotenv_config_path=./client/.env"
+    "fragments": "babel-node -r node_modules/dotenv/config client/fetchFragmentsTypes.js dotenv_config_path=./client/.env",
+    "aws": "npm run compile-prod && npm run build-prod && npm run start"
   },
   "repository": {
     "type": "git",
