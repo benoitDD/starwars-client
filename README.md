@@ -3,6 +3,8 @@
 Une application web qui consume l'api  [starwars-api
 ](https://github.com/benoitDD/starwars-api)
 
+Une instance de l'application est mise sur [aws](http://starwars-client.n4jdk2npmn.us-east-2.elasticbeanstalk.com/)
+
 ## Téléchargement
 
 `git clone https://github.com/benoitDD/starwars-client.git`
