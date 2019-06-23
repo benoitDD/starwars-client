@@ -1,5 +1,5 @@
 import React from 'react'
-import {Router} from '@reach/router'
+import {Router, Redirect} from '@reach/router'
 import Starships from './starships/starships'
 import Starship from './starships/starship'
 import Persons from './persons/persons'
@@ -18,6 +18,7 @@ function Sections(){
 	return(
 		<section>
 			<Router>
+				<Redirect from="/" to="/starships" />
 				<Starships path = '/starships'/>
 				<Starship path = '/starship/:id'/>
 				<Persons path = '/persons'/>

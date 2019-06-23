@@ -12,11 +12,11 @@ class Nav extends Component {
 
 	items(){
 		return [
-			<NavItem key = 'starships' to = '/starships/'>{this.props.t('starships')}</NavItem>,
-			<NavItem key = 'persons' to = '/persons/'>{this.props.t('persons')}</NavItem>,
-			<NavItem key = 'planets' to = '/planets/'>{this.props.t('planets')}</NavItem>,
-			<NavItem key = 'species' to = '/species/'>{this.props.t('species')}</NavItem>,
-			<NavItem key = 'vehicles' to = '/vehicles/'>{this.props.t('vehicles')}</NavItem>
+			<NavItem key = 'starships' to = '/starships'>{this.props.t('starships')}</NavItem>,
+			<NavItem key = 'persons' to = '/persons'>{this.props.t('persons')}</NavItem>,
+			<NavItem key = 'planets' to = '/planets'>{this.props.t('planets')}</NavItem>,
+			<NavItem key = 'species' to = '/species'>{this.props.t('species')}</NavItem>,
+			<NavItem key = 'vehicles' to = '/vehicles'>{this.props.t('vehicles')}</NavItem>
 		]
 	}
 
