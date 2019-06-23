@@ -156,7 +156,5 @@ exports[`Test starhips error 1`] = `
 exports[`Test starhips loading 1`] = `
 <div
   id="pagination-loading"
->
-  
-</div>
+/>
 `;

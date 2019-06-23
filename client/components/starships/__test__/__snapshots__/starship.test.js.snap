@@ -491,7 +491,5 @@ exports[`Test Starship error 1`] = `
 exports[`Test Starship loading 1`] = `
 <div
   className="object_loading"
->
-  
-</div>
+/>
 `;

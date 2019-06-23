@@ -36,7 +36,7 @@ class TrySignIn extends Component {
 	}
 
 	render(){
-		return this.state.queryDidit ? this.props.children : ''
+		return this.state.queryDidit && this.props.children
 	}
 }
 

@@ -8,10 +8,7 @@ function updateActive(ComponentUpdateActive){
 				<ProviderContext.Consumer>
 					{
 						({modeUpdate}) => {
-							if(!modeUpdate){
-								return ''
-							}
-							return <ComponentUpdateActive {...this.props}/>
+							return modeUpdate && <ComponentUpdateActive {...this.props}/>
 						}
 					}
 				</ProviderContext.Consumer>

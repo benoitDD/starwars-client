@@ -8,10 +8,7 @@ function componentPrivate(ComponentWillBePrivate){
 				<ProviderContext.Consumer>
 					{
 						({user}) => {
-							if(!user){
-								return ''
-							}
-							return <ComponentWillBePrivate {...this.props}/>
+							return user && <ComponentWillBePrivate {...this.props}/>
 						}
 					}
 				</ProviderContext.Consumer>

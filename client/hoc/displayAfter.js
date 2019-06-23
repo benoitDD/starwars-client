@@ -22,10 +22,7 @@ function displayAfter(ms = 500){
 			}
 
 			render(){
-				if(!this.state.display){
-					return ''
-				}
-				return <ComponentToDisplayAfter {...this.props}/>
+				return this.state.display && <ComponentToDisplayAfter {...this.props}/>
 			}
 		}
 	}
