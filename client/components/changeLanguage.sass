@@ -6,8 +6,16 @@
     height: $header_nav_height
     @include desktop
         min-width: 120px
-    img
-        max-height: $header_nav_height
+    div.flag
+        height: $header_nav_height
+        width: $header_nav_height
+        background:url("../images/flags.png") no-repeat
+    div.flag.en
+        background-position-y: 0
+    div.flag.es
+        background-position-y: -50px
+    div.flag.fr
+        background-position-y: -100px
     .changeLanguage_langage
         display: flex
         flex-direction: row
