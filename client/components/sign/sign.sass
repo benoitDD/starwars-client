@@ -14,17 +14,14 @@ $space_betwwen_item: 10px
         height: 20px
         cursor: pointer
     @include tablet(true)
+        #nav-sign-in, #nav-sign-up
+            background: url('../../images/icons.png') no-repeat
+            display: inline-block
+            width: 30px
+            height: 30px
+            text-indent: -9999px
         #nav-sign-in
-                background: url('../../images/sign-in.png') no-repeat
-                background-size: 30px 30px
-                display: inline-block
-                width: 30px
-                height: 30px
-                text-indent: -9999px
+            background-position-y: -30px
         #nav-sign-up
-                background: url('../../images/sign-up.png') no-repeat
-                background-size: 30px 30px
-                display: inline-block
-                width: 30px
-                height: 30px
-                text-indent: -9999px
+            background-position-y: -30px
+            background-position-x: -30px
