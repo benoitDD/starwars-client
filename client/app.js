@@ -7,8 +7,6 @@ import ModeUpdate from './components/modeUpdate'
 import withSizes from 'react-sizes'
 import PropTypes from 'prop-types'
 import {ProviderPart1} from './utils'
-import arrowLeft from './images/arrow-left.png'
-import arrowRight from './images/arrow-right.png'
 
 class App extends Component {
 
@@ -22,9 +20,8 @@ class App extends Component {
 	handleSmallScrenPart1(){
 		return (
 			<Fragment>
-				<img onClick = {this.tooglePart1Small} 
-					className = 'toogle-part1' alt = 'arrow' 
-					src = {this.state.displayPart1Small ? arrowLeft : arrowRight} />
+				<div onClick = {this.tooglePart1Small} 
+					className = {`toogle-part1 ${this.state.displayPart1Small ? 'left' : 'right'}`} />
 
 				{
 					this.state.displayPart1Small &&
